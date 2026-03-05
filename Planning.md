@@ -7,7 +7,7 @@ I'm passionate about video games and wanted to create GameVault — a web projec
 This is how I will structure my one-page website:
 
 1. **Header (with navigation + dark mode toggle)**  
-	I will include the site logo/name and a navigation menu for quick section links. I will place the dark mode toggle in the nav so users can switch between light and dark themes at any time.
+	I will include the site name and a navigation menu for quick section links. I will place the dark mode toggle in the nav so users can switch between light and dark themes at any time.
 
 2. **Carousel hero**  
 	I will create a carousel hero that displays only the genre name and a game image of my choosing from that genre as the background. I will include slider arrows and dot indicators to show which slide the user is on.
