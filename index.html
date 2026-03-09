@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Vault</title>
+    <!-- Orbitron Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
@@ -30,15 +31,75 @@
 
     <main>
          <h2 id="genre-showcase">Game genre showcase</h2>
-        <section id="carousel">
-           
+         <br>
+         <section class="component-carousel">
+    <div id="carousel-container" class="carousel-container">
+        <div class="slider-carousel">
 
-        </section>        
+            <div class="slide main">
+                <a href="https://store.steampowered.com/app/730/CounterStrike_2/" target="_blank">
+                    <img src="images/cs2.png" alt="Shooter Genre"/>
+                </a>
+                <div class="image-text">
+                    <h3>Shooter</h3>
+                    <p>Fast paced action and combat</p>
+                </div>
+            </div>
 
+            <div class="slide">
+                <a href="https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/" target="_blank">
+                    <img src="images/skyrim.png" alt="RPG Genre"/>
+                </a>
+                <div class="image-text">
+                    <h3>RPG</h3>
+                    <p>Deep stories and character building</p>
+                </div>
+            </div>
 
+            <div class="slide">
+                <a href="https://store.steampowered.com/app/319510/Five_Nights_at_Freddys/" target="_blank">
+                    <img src="images/FNaF.png" alt="Horror Genre"/>
+                </a>
+                <div class="image-text">
+                    <h3>Horror</h3>
+                    <p>Survival and psychological terror</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <a href="https://store.steampowered.com/app/105600/Terraria/" target="_blank">
+                    <img src="images/terraria.png" alt="Indie Genre"/>
+                </a>
+                <div class="image-text">
+                    <h3>Indie</h3>
+                    <p>Creative and unique experiences</p>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a class="previous">&#10094</a>
+                <a class="next">&#10095</a>
+            </div>
+
+        </div>
+        <!-- Navigation Dots -->
+        <div class="navigation-dot-container">
+            <span class="navigation-dot"></span>
+            <span class="navigation-dot"></span>
+            <span class="navigation-dot"></span>
+            <span class="navigation-dot"></span>
+        </div>
+    </div>
+</section>
+    <div class="carousel-description">
+        <p id="slide-description">Fast paced action and combat</p>
+
+    </div>
 
     </main>
 
-    <script src="js/script.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="js/carousel.js"></script>
+    
 </body>
 </html>

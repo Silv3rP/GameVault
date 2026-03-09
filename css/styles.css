@@ -1,7 +1,22 @@
+/* ===== BASE ===== */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+body {
+    font-family: 'Orbitron', Verdana, sans-serif;
+    background-color: lightgrey;
+    color: #000;
+}
+
+.dark-mode {
+    background-color: black;
+    color: #fff;
+}
+
+/* ===== HEADER ===== */
 header {
     position: relative;
     text-align: center;
@@ -10,21 +25,27 @@ header {
 
 .title {
     text-align: left;
-    font-size: 20px;
-    font-family: 'Orbitron', sans-serif;
-    text-shadow: #000 2px 2px 4px;
-}
-
-.navbar{
-    display: flex;
-    justify-content: center;
-    margin-top: 1em;
-    gap: 2em;    
-    text-shadow: #000 2px 2px 4px;
-    cursor: pointer;
     font-size: 25px;
     font-family: 'Orbitron', sans-serif;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.dark-mode .title {
+    color: #fff;
+    text-shadow: 2px 2px 4px #fff;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    font-size: 25px;
     background-color: darkgray;
+    padding: 0.5em 1em;
+    margin-top: 3em;
+    border-radius: 20px;
 }
 
 .navbar a {
@@ -35,63 +56,177 @@ header {
 
 .navbar a:hover {
     color: #e48520;
-    background: none;
+    background-color: #000;
 }
 
-#theme-toggle{
+.dark-mode .navbar {
+    background-color: #333;
+}
+
+.dark-mode .navbar a {
+    color: #fff;
+}
+
+.dark-mode .navbar a:hover {
+    color: blue;
+    background-color: #000;
+}
+
+/* ===== DARK MODE TOGGLE ===== */
+#theme-toggle {
     position: absolute;
     top: 1em;
     right: 1em;
     background: none;
     border: none;
     cursor: pointer;
-    
 }
 
-.icon{
+.icon {
     width: 100px;
     height: 100px;
-    margin: 0;
-    padding: 0;
 }
 
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-
-.dark-mode .title {
-    color: #ffffff;
-    text-shadow: #ffffff 2px 2px 4px;
-}
-
-.dark-mode .navbar{
-    background-color: #333;
-}
-
-.dark-mode .navbar a {
-    color: #ffffff;
-    text-shadow: #fff 2px 2px 4px;
-}
-
-.dark-mode .navbar a:hover {
-    color: blue;
-    background: none;
-}
-
-body{
-    background-color: lightgrey;
-    color: #000;
-    font-family: 'Orbitron', sans-serif;
-}
-
-#genre-showcase{
+/* ===== GENRE SHOWCASE HEADING ===== */
+#genre-showcase {
     text-align: center;
-    margin: 2em 0;
-    text-shadow: #000 2px 2px 4px;
+    padding: 1em;
+    border-bottom: 3px solid #e48520;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .dark-mode #genre-showcase {
-    color: #ffffff;
-    text-shadow: #ffffff 2px 2px 4px;
+    border-bottom: 3px solid blue;
+}
+
+/* ===== CAROUSEL ===== */
+.carousel-container {
+    width: 800px;
+    height: 500px;
+    position: relative;
+    margin: 2em auto 0 auto;
+}
+
+.slider-carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.slide:hover img {
+    filter: brightness(0.7);
+}
+
+/* Text overlaid on image */
+.image-text {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    
+    font-family: 'Orbitron', sans-serif;
+}
+
+.image-text p{
+    display: none;
+}
+
+p{
+    font-size: 25px;
+}
+
+.image-text h3 {
+    color: #e48520;
+    margin-bottom: 0.3em;
+    font-size: 75px;
+}
+
+
+.dark-mode .image-text h3 {
+    color: blue;
+}
+
+
+.carousel-description {
+    width: 800px;
+    margin: 1em auto;
+    text-align: center;
+    font-size: 16px;
+    min-height: 2em;
+}
+
+.dark-mode .carousel-description {
+    color: #fff;
+}
+
+/* ===== CAROUSEL NAV BUTTONS ===== */
+.navigation-buttons .previous,
+.navigation-buttons .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+}
+
+.navigation-buttons .next {
+    right: 0;
+}
+
+.navigation-buttons .previous:hover,
+.navigation-buttons .next:hover {
+    background: #000;
+}
+
+/* ===== NAVIGATION DOTS ===== */
+.navigation-dot-container {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+}
+
+.navigation-dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.active,
+.navigation-dot:hover {
+    background-color: #e48520;
+}
+
+.dark-mode .active,
+.dark-mode .navigation-dot:hover {
+    background-color: blue;
 }

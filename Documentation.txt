@@ -1,3 +1,0 @@
-Documentation 
-
-1. Position of title and navbar css issues with darkmode icon when using css grid so I used flex for nav and positioned title and darkmode icon how I wanted
