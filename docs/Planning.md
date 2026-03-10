@@ -32,4 +32,4 @@ This is how I will structure my one-page website:
 
 ## Wireframe
 
-![GameVault Wireframe](images/gamevault_wireframe.png)
+![GameVault Wireframe](../images/gamevault_wireframe.png)
