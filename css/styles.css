@@ -294,6 +294,31 @@ p{
     border-left: blue 5px solid;
 }
 
+.back-to-top {
+    font-size: 65px;
+    display: inline-block;
+    margin-left: 1em;
+    text-decoration: none;
+    color: #e48520;
+    transition: transform 0.6s ease, color 0.6s ease;
+    vertical-align: middle;
+    transform: rotateY(0deg);
+}
+
+.back-to-top:hover {
+    color: #000;
+    transform: rotateY(180deg);
+    
+}
+
+.dark-mode .back-to-top:hover {
+    color: #fff;
+}
+
+.dark-mode .back-to-top {
+    color: blue;
+}
+
 .genre-text {
     font-size: 20px;
     padding: 0.5em;
