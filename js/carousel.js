@@ -19,25 +19,21 @@ window.addEventListener("load", () => {
   let currentIndex = 0;
 
 
-  // function to update what slide is visible
+  // function to update what slide is visible and using .active class to show which dot is active with opacity and position changes in CSS
   const updateCarousel = () => {
 
-    // hide every slide first
+    //remove active class from all slides and dots
     for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+      slides[i].classList.remove("active");
+      dots[i].classList.remove("active");
+
     }
 
-    // remove "active" class from every dot
-    dots.forEach(dot => {
-      dot.classList.remove("active");
-    });
-
-    // show the current slide
-    slides[currentIndex].style.display = "block";
-
-    // highlight the correct dot
+    //add the active class to the current slide and dots
+    slides[currentIndex].classList.add("active");
     dots[currentIndex].classList.add("active");
 
+    
     // Update the slide description based on the current slide
     const description = document.getElementById("slide-description");
     description.textContent = slides[currentIndex].querySelector(".image-text p").textContent;
@@ -99,14 +95,27 @@ window.addEventListener("load", () => {
   // show the first slide when page loads
   updateCarousel();
 
-  // AUTO-ROTATE CAROUSEL (every 5 seconds)
-  setInterval(() => {
+  // AUTO-ROTATE CAROUSEL (every 5 seconds) and pause on hover
+let timer = setInterval(() => {
     currentIndex++;
     if (currentIndex >= slides.length) {
       currentIndex = 0;
     }
     updateCarousel();
   }, 5000);
+
+  //fixed the issue of the timer not pausing when hovering over the carousel by adding event listeners to the slider container class instead of the entire carousel. 
+  const sliderContainer = carousel.querySelector(".slider-container");
+
+  //clearInterval(timer) stops the timer, and setInterval starts it again when mouse leaves the carousel
+  sliderContainer.addEventListener("mouseenter", () => clearInterval(timer));
+  sliderContainer.addEventListener("mouseleave", () => {
+    timer = setInterval(() => {
+      currentIndex++;
+      if (currentIndex >= slides.length) currentIndex = 0;
+      updateCarousel();
+    }, 5000);
+  });
 
 });
 

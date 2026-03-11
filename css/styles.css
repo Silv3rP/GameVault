@@ -5,15 +5,21 @@
     padding: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Orbitron', Verdana, sans-serif;
     background-color: lightgrey;
     color: #000;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .dark-mode {
     background-color: black;
     color: #fff;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* ===== HEADER ===== */
@@ -80,6 +86,12 @@ header {
     background: none;
     border: none;
     cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.2);
+    border-radius: 8px;
 }
 
 .icon {
@@ -108,16 +120,34 @@ header {
     margin: 2em auto 0 auto;
 }
 
+.slider-container{
+    width:100%;
+    margin: 0 auto;
+
+}
+
+/*smooth sliding for carousel */
 .slider-carousel {
     width: 100%;
-    height: 100%;
+    height: 500px;
     position: relative;
+    overflow: hidden;
 }
 
 .slide {
-    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
     width: 100%;
     height: 100%;
+    pointer-events: none;
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .slide img {
@@ -141,7 +171,6 @@ header {
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
-    
     font-family: 'Orbitron', sans-serif;
 }
 
@@ -154,27 +183,22 @@ p{
 }
 
 .image-text h3 {
-    color: #e48520;
+    color: #fff;
     margin-bottom: 0.3em;
     font-size: 75px;
 }
 
-
-.dark-mode .image-text h3 {
-    color: blue;
-}
-
-
 .carousel-description {
-    width: 800px;
-    margin: 1em auto;
     text-align: center;
-    font-size: 16px;
-    min-height: 2em;
+    padding: 2em;
+    border-bottom: 3px solid #e48520;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .dark-mode .carousel-description {
     color: #fff;
+    border-bottom: 3px solid blue;
 }
 
 /* ===== CAROUSEL NAV BUTTONS ===== */
@@ -229,4 +253,79 @@ p{
 .dark-mode .active,
 .dark-mode .navigation-dot:hover {
     background-color: blue;
+}
+
+/* ===== GENRE SECTIONS ===== */
+
+.genre-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 2em;
+    padding: 2em;
+}
+
+.genre-content a {
+    display: block;
+    width: 65%;
+}
+
+.genre-card {
+    background-color: #e48520;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 0.5em;
+    overflow: hidden;
+    margin-bottom: 2em;
+}
+
+.dark-mode .genre-card {
+    background-color: blue;
+    color: #fff;
+}
+
+.genre-title {
+    font-size: 60px;
+    margin: 0.5em;
+    border-left: #e48520 5px solid;
+
+}
+
+.dark-mode .genre-title {
+    border-left: blue 5px solid;
+}
+
+.genre-text {
+    font-size: 20px;
+    padding: 0.5em;
+    background-color: darkgray;
+    width: 35%;
+    transition: filter 0.3s ease;
+}
+
+span{
+    font-weight: bold;
+}
+
+.dark-mode .genre-text {
+    background-color: #333;
+    color: #fff;
+}
+
+.genre-gif {
+    width: 65%;
+    height: 400px;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.genre-image:hover {
+    filter: brightness(0.5) grayscale(100%);
+}
+
+.genre-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
 }

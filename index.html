@@ -13,93 +13,313 @@
 <body>
     <header>
         <div class="title">
-            <h1>Game Vault</h1>
-            
+        <h1>Game Vault</h1></a>
         </div>
         <nav>
-        <div class ="navbar">
-            <a href="#shooter"> Shooter</a>
-            <a href="#rpg"> RPG</a>
-            <a href="#horror"> Horror</a>
-            <a href="#indie"> Indie</a>
-            <button id="theme-toggle">
-                <img src="images/moon.png" alt="Dark Mode" class="icon">
-            </button>
-        </div>
+            <div class="navbar">
+                <a href="#shooter">Shooter</a>
+                <a href="#rpg">RPG</a>
+                <a href="#horror">Horror</a>
+                <a href="#indie">Indie</a>
+                <button id="theme-toggle">
+                    <img src="images/moon.png" alt="Dark Mode" class="icon">
+                </button>
+            </div>
         </nav>
     </header>
 
-    <main>
-         <h2 id="genre-showcase">Game genre showcase</h2>
-         <br>
-         <section class="component-carousel">
-    <div id="carousel-container" class="carousel-container">
-        <div class="slider-carousel">
+        <main>
+            <h2 id="genre-showcase">Game genre showcase</h2>
+        <section class="component-carousel">
+            <div id="carousel-container" class="carousel-container">
+                <div class="slider-container">
+                    <div class="slider-carousel">
+                        <div class="slide main">
+                            <a href="https://store.steampowered.com/app/730/CounterStrike_2/" target="_blank">
+                                <img src="images/cs2.png" alt="Shooter Genre"/>
+                            </a>
+                            <div class="image-text">
+                                <h3>Shooter</h3>
+                                <p>Fast paced action and combat</p>
+                            </div>
+                        </div>
 
-            <div class="slide main">
-                <a href="https://store.steampowered.com/app/730/CounterStrike_2/" target="_blank">
-                    <img src="images/cs2.png" alt="Shooter Genre"/>
-                </a>
-                <div class="image-text">
-                    <h3>Shooter</h3>
-                    <p>Fast paced action and combat</p>
+                        <div class="slide">
+                            <a href="https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/" target="_blank">
+                                <img src="images/skyrim.png" alt="RPG Genre"/>
+                            </a>
+                            <div class="image-text">
+                                <h3>RPG</h3>
+                                <p>Deep stories and character building</p>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <a href="https://store.steampowered.com/app/883710/Resident_Evil_2/" target="_blank">
+                                <img src="images/re2ss.png" alt="Horror Genre"/>
+                            </a>
+                            <div class="image-text">
+                                <h3>Horror</h3>
+                                <p>Survival and psychological terror</p>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <a href="https://store.steampowered.com/app/105600/Terraria/" target="_blank">
+                                <img src="images/terraria.png" alt="Indie Genre"/>
+                            </a>
+                            <div class="image-text">
+                                <h3>Indie</h3>
+                                <p>Creative and unique experiences</p>
+                            </div>
+                        </div>
+
+                        <div class="navigation-buttons">
+                            <a class="previous">&#10094</a>
+                            <a class="next">&#10095</a>
+                        </div>
+                    </div>
+                    <div class="navigation-dot-container">
+                        <span class="navigation-dot"></span>
+                        <span class="navigation-dot"></span>
+                        <span class="navigation-dot"></span>
+                        <span class="navigation-dot"></span>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="slide">
-                <a href="https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/" target="_blank">
-                    <img src="images/skyrim.png" alt="RPG Genre"/>
-                </a>
-                <div class="image-text">
-                    <h3>RPG</h3>
-                    <p>Deep stories and character building</p>
-                </div>
-            </div>
-
-            <div class="slide">
-                <a href="https://store.steampowered.com/app/319510/Five_Nights_at_Freddys/" target="_blank">
-                    <img src="images/FNaF.png" alt="Horror Genre"/>
-                </a>
-                <div class="image-text">
-                    <h3>Horror</h3>
-                    <p>Survival and psychological terror</p>
-                </div>
-            </div>
-
-            <div class="slide">
-                <a href="https://store.steampowered.com/app/105600/Terraria/" target="_blank">
-                    <img src="images/terraria.png" alt="Indie Genre"/>
-                </a>
-                <div class="image-text">
-                    <h3>Indie</h3>
-                    <p>Creative and unique experiences</p>
-                </div>
-            </div>
-
-            <div class="navigation-buttons">
-                <a class="previous">&#10094</a>
-                <a class="next">&#10095</a>
-            </div>
-
+        <div class="carousel-description">
+            <p id="slide-description">Fast paced action and combat</p>
         </div>
-        <!-- Navigation Dots -->
-        <div class="navigation-dot-container">
-            <span class="navigation-dot"></span>
-            <span class="navigation-dot"></span>
-            <span class="navigation-dot"></span>
-            <span class="navigation-dot"></span>
-        </div>
-    </div>
-</section>
-    <div class="carousel-description">
-        <p id="slide-description">Fast paced action and combat</p>
 
-    </div>
+        <section id="shooter">
+            <h2 class="genre-title">Shooter</h2>
+            <div class="genre-card">
+                <div class="genre-content">
+                    <p class="genre-text">Shooter games focus on fast reactions, sharp aim, and quick decision-making. 
+                        Counter-Strike 2 is known for its tactical, skill-based gameplay where precision and teamwork matter, while Call of Duty delivers fast-paced multiplayer with constant action. 
+                        Shooters generally fall into two main categories — first-person shooters (FPS), where you see through your character’s eyes, and third-person shooters (TPS), where the camera sits behind your character. 
+                        A good example of a TPS is Tom Clancy’s The Division, which gives players a wider view of the battlefield during combat.
+                    </p> 
+                    <img src="images/call-of-duty-modern-warfare.gif" alt="Call of Duty Modern Warfare Gameplay" class="genre-gif">
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                    <a href="https://store.steampowered.com/app/3595230/Call_of_Duty_Modern_Warfare_II/" target="_blank">
+                        <img src="images/MWII.png" alt="Call of Duty Modern Warefare II" class="genre-image">
+                    </a>
+                    <p class="genre-text">
+                        <span>Call of Duty: Modern Warfare II</span> (2022) follows Task Force 141 through a gripping single-player campaign set across multiple global locations. 
+                        The multiplayer is fast-paced and packed with a strong variety of modes and maps, while weapon mastery camos give dedicated players something to grind for. 
+                        Spec Ops also returns with cooperative missions you can tackle with friends, making it one of the stronger recent entries in the franchise.
+                    </p>
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                    <p class="genre-text">
+                        <span>Counter-Strike 2</span> is known for its tactical, skill-based gameplay where precision, positioning, and teamwork matter. 
+                        Rounds are short and unforgiving, so communication and strategy are key. 
+                        Built on the Source 2 engine, the game features improved visuals and dynamic smoke grenades, while keeping the tight gunplay and balanced maps that make it one of the most competitive shooters in the world.                    
+                    </p>
+                    <a href="https://store.steampowered.com/app/730/CounterStrike_2/" target="_blank">
+                        <img src="images/cs2_card.png" alt="Counter-Strike 2 Gameplay" class="genre-image">
+                    </a>
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                    <a href="https://store.steampowered.com/app/365590/Tom_Clancys_The_Division/" target="_blank">
+                        <img src="images/tctd.png" alt="Tom Clancy's The Division Gameplay" class="genre-image">
+                    </a>
+                    <p class="genre-text">
+                        <span>Tom Clancy’s The Division</span> is a third-person shooter set in a post-apocalyptic New York City. 
+                        Players take on the role of Division agents tasked with restoring order after a devastating pandemic. 
+                        The game features a mix of cover-based shooting, RPG elements, and cooperative multiplayer. 
+                        The Dark Zone offers a unique PvPvE experience where players can team up to fight AI enemies while also competing against other players for valuable loot.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="rpg">
+            <h2 class="genre-title">RPG</h2>
+            <div class="genre-card">
+                <div class="genre-content">
+                    <p class="genre-text">
+                        RPGs (Role-Playing Games) are all about immersing yourself in a rich world and developing your character through choices and progression. 
+                        Games such as Elden Ring, The Elder Scrolls V: Skyrim, and Fable II are known for their expansive open worlds, deep lore, and complex character customization.
+                        These games tell a story through the gameplay, sound and music, artstyle, worldbuilding and so many more elements that make the player feel like they are a part of the world. 
+                    </p>
+                    <img src="images/epicTree.png" alt="Elden Ring Gameplay" class="genre-gif">
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                    <a href="https://store.steampowered.com/app/1245620/ELDEN_RING/" target="_blank">
+                        <img src="images/eldenring.png" alt="Elden Ring Gameplay" class="genre-image">
+                    </a>
+                    <p class="genre-text">
+                        <span>Elden Ring</span> is an open-world action RPG developed by FromSoftware that blends challenging combat with exploration across the vast world of the Lands Between. 
+                        Players can approach encounters in different ways using melee weapons, magic, stealth, or summons, allowing for a lot of freedom in how battles are handled. 
+                        The game encourages exploration, rewarding players with hidden bosses, dungeons, and powerful equipment scattered throughout the world. 
+                        Its dark fantasy setting, demanding difficulty, and deep build variety make it one of the most influential RPGs in recent years.
+                    </p>
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                    <p class="genre-text">
+                        <span>The Elder Scrolls V: Skyrim</span> is an open-world RPG that offers players the freedom to explore the province of Skyrim and shape their own adventure. 
+                        With a vast world filled with quests, dungeons, and diverse characters, players can choose to follow the main storyline or create their own path. 
+                        The game features a deep character progression system, allowing players to customize their skills and abilities as they level up. 
+                        Whether you want to be a stealthy assassin, a powerful mage, or a mighty warrior, Skyrim provides the tools and freedom to play your way.
+                    </p>
+                    <a href="https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/" target="_blank">
+                        <img src="images/skyrim.png" alt="Skyrim Gameplay" class="genre-image">
+                    </a>
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                    <a href="https://www.xbox.com/en-IE/games/store/fable-ii/c2wkjj9f5936" target="_blank">
+                        <img src="images/FableII.png" alt="Fable II Gameplay" class="genre-image">
+                    </a>
+                    <p class="genre-text">
+                        <span>Fable II</span> is an action RPG that emphasizes player choice and consequence in a whimsical fantasy world. 
+                        Players can shape their character’s morality through their actions, which affects how NPCs react to them and the overall story. 
+                        The game features a mix of combat, exploration, and social interaction, allowing players to build relationships, own property, and even get married. 
+                        Fable II’s charming art style, engaging story, and emphasis on player agency make it a beloved title in the RPG genre.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="horror">
+            <h2 class="genre-title">Horror</h2>
+            <div class="genre-card">
+                <div class="genre-content">
+                    <p class="genre-text">
+                        Horror games are designed to evoke fear and tension, often through atmospheric storytelling, unsettling environments, and jump scares. 
+                        Games like Resident Evil 2, Dead Space, and Outlast are known for their intense horror experiences that keep players on edge. 
+                        These games often feature limited resources, forcing players to make strategic decisions about when to fight or flee. 
+                        The combination of psychological horror, immersive sound design, and eerie visuals creates a sense of dread that defines the genre.
+                    </p>
+                    <img src="images/DeadSpace.gif" alt="Dead Space Gameplay" class="genre-gif">
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                    <a href="https://store.steampowered.com/app/1693980/Dead_Space/" target="_blank">
+                        <img src="images/DeadSpace.png" alt="Dead Space Gameplay" class="genre-image">
+                    </a>
+                    <p class="genre-text">
+                        <span>Dead Space</span> is a survival horror game set in the depths of space, where players take on the role of Isaac Clarke, an engineer trapped on a mining spaceship overrun by monstrous creatures called Necromorphs. 
+                        The game is known for its intense atmosphere, strategic dismemberment combat system, and psychological horror elements. 
+                        Players must manage limited resources while navigating claustrophobic environments filled with jump scares and unsettling audio cues, making it a standout title in the horror genre.
+                    </p>
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                    <p class="genre-text">
+                        <span>Resident Evil 2</span> is a survival horror game that follows protagonists Leon S. Kennedy and Claire Redfield as they navigate a zombie-infested Raccoon City. 
+                        The game features a tense atmosphere, resource management, and a mix of combat and puzzle-solving. 
+                        With its iconic setting, memorable characters, and intense gameplay, Resident Evil 2 is considered one of the best horror games of all time.
+                     </p>
+                    <a href="https://store.steampowered.com/app/883710/Resident_Evil_2/" target="_blank">
+                        <img src="images/re2.png" alt="Resident Evil 2 Gameplay" class="genre-image">
+                    </a>
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                    <a href="https://store.steampowered.com/app/238460/Outlast/" target="_blank">
+                        <img src="images/outlast.png" alt="Outlast Gameplay" class="genre-image">
+                    </a>
+                    <p class="genre-text">
+                        <span>Outlast</span> is a first-person survival horror game that places players in the shoes of investigative journalist Miles Upshur as he explores the Mount Massive Asylum. 
+                        The game is known for its intense atmosphere, reliance on stealth, and lack of combat options, forcing players to hide or run from threats. 
+                        With its chilling environments, psychological horror elements, and relentless tension, Outlast delivers a terrifying experience that has become a staple in the horror genre.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="indie">
+            <h2 class="genre-title">Indie</h2>
+            <div class="genre-card">
+                <div class="genre-content">
+                    <p class="genre-text">
+                        Indie games are developed by small teams or individuals, often with a focus on creativity and innovation. 
+                        Games like Minecraft, Terraria, and Papers Please have gained critical acclaim for their unique art styles, engaging gameplay, and heartfelt storytelling. 
+                        Indie games often explore niche genres or experimental mechanics that larger studios may avoid, resulting in fresh and memorable gaming experiences.
+                    </p>
+                    <img src="images/minecraft.gif" alt="Minecraft Gameplay" class="genre-gif">
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                    <a href="https://www.minecraft.net/en-us/about-minecraft" target="_blank">
+                        <img src="images/minecraft.png" alt="Minecraft Game" class="genre-image">
+                    </a>
+                    <p class="genre-text">
+                        <span>Minecraft</span> is a sandbox game that allows players to build and explore virtual worlds made of blocks. It is the most popular game of all time, with over 200 million copies sold across all platforms.
+                        The game features an open-ended gameplay style, where players can create structures, craft items, and engage in various activities like mining, farming, and battling mobs. 
+                        With its endless possibilities and creative freedom, Minecraft has become a cultural phenomenon and a beloved favorite among players of all ages.
+                    </p>
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                     <p class="genre-text">
+                        <span>Terraria</span> is a 2D sandbox adventure where creativity meets danger at every turn. 
+                        Dig through endless layers of earth, explore mysterious biomes, and uncover hidden treasures. Craft weapons, armor, and tools to face swarms of enemies and formidable bosses. 
+                        Build towering castles, secret hideouts, or sprawling towns, and experiment with traps, machinery, and magical items. 
+                        Dynamic events, random loot, and cooperative multiplayer ensure no two adventures are ever the same—every world is alive, unpredictable, and packed with surprises waiting to be discovered.
+                    </p>
+                    <a href="https://store.steampowered.com/app/105600/Terraria/" target="_blank">
+                        <img src="images/terraria.png" alt="Terraria Gameplay" class="genre-image">
+                    </a>
+                </div>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-content">
+                    <a href="https://store.steampowered.com/app/239030/Papers_Please/" target="_blank">
+                        <img src="images/pp.png" alt="Papers Please Gameplay" class="genre-image">
+                    </a>
+                    <p class="genre-text">
+                        <span>Papers Please</span> is a simulation game where you play as an immigration officer in a fictional dystopian country. 
+                        You must review documents and make decisions about who to allow into the country, dealing with moral dilemmas and consequences.
+                        Your job as immigration inspector is to control the flow of people entering the Arstotzkan side of Grestin from Kolechia. 
+                        Among the throngs of immigrants and visitors looking for work are hidden smugglers, spies, and terrorists.
+                        Using only the documents provided by travelers and the Ministry of Admission's primitive inspect, search, and fingerprint systems you must decide who can enter Arstotzka and who will be turned away or arrested.
+                    </p>
+                </div>
+            </div>
+
+        
+
+
+
 
     </main>
 
     <script src="js/darkmode.js"></script>
     <script src="js/carousel.js"></script>
-    
 </body>
 </html>
