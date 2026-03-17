@@ -4,7 +4,7 @@ This project is a single-page application built with HTML, CSS, and JavaScript f
 It was created as part of a college assignment to demonstrate front-end development, interactivity, and JavaScript functionality.
 
 🔗 Live site:  
-[GitHub Pages URL here]
+https://colmn-dev.github.io/GameVault/
 
 ---
 
