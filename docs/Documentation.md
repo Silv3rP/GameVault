@@ -6,13 +6,13 @@ I chose a dark-themed gaming site with an orange and blue colour scheme. The ora
 
 The carousel was the centrepiece — showing one game per genre at a time to keep the focus clean and simple. Each carousel image links directly to the game's Steam store page, opening in a new tab, so users can click through to find out more or purchase any game that interests them.
 
-Each genre section uses a two-column flex layout with descriptive text on the left and a game image on the right. The card backgrounds use orange (`#e48520`) in light mode and blue in dark mode to stay consistent with the overall colour scheme.
+Each genre section uses a two-column flex layout alternating between text and image, with some cards having the image on the left and text on the right and vice versa to break up the layout visually. The card backgrounds use orange (`#e48520`) in light mode and blue in dark mode to stay consistent with the overall colour scheme.
 
 ## Development Process
 
 I built the site in layers: HTML structure first, then CSS styling, then JavaScript interactivity.
 
-The dark mode toggle was implemented early since it affects the entire page. The carousel came next, followed by connecting the description text below it to update as users navigate between slides. The genre sections were built last, each following the same flex layout pattern to keep things consistent.
+The dark mode toggle was implemented early since it affects the entire page. The carousel came next, followed by connecting the description text below it to update as users navigate between slides. The genre sections were then built, each following the same flex layout pattern to keep things consistent. Finally, I added the newsletter form and footer. 
 
 ## Challenges Faced
 
@@ -22,20 +22,34 @@ The carousel required the most adjustments. The arrow buttons and navigation dot
 
 Centring the genre names on the carousel images took several attempts, eventually resolved with `top: 50%`, `left: 50%`, and `transform: translate(-50%, -50%)`.
 
-The genre descriptions were initially displaying twice — once under the genre name heading overlayed on the slider images and again below the carousel. I fixed this by hiding the text within the image overlay `display: none;` and using JavaScript to dynamically update only the description div below the carousel, which was a p tag for the descriptions in my HTML file with the `.carousel-description` class .
+The genre descriptions were initially displaying twice — once overlaid on the slider images and again below the carousel. I fixed this by hiding the text within the image overlay using `display: none` and using JavaScript to dynamically update only the description div below the carousel.
 
 Building the genre sections also had its challenges. Getting the image and text to sit side by side correctly with flex took some adjusting, particularly around widths and making sure the anchor tag wrapping the image wasn't breaking the layout or adding unwanted spacing.
+
+The `setInterval` on the carousel was causing problems — it kept advancing the slides even while hovering over them, making it hard to read or click the buttons. I added `clearInterval` on `mouseenter` to pause it, then restarted it on `mouseleave`. But the listener was on the whole section, so it was pausing even when the mouse was just nearby. I fixed this by wrapping the slides and buttons in a new inner div and moving the listeners there instead.
+
+Getting the regex patterns right for the form validation took some trial and error. I initially had a pattern that was too strict and was rejecting valid names. I settled on `/^[A-Za-z\s]{2,50}$/` for names and a standard email pattern that checks for the correct format.
 
 ## JavaScript Interactivity
 
 **Dark Mode Toggle** — Clicking the button toggles a `.dark-mode` class on the body element. CSS handles the visual changes. localStorage saves the user's preference so it persists across sessions.
 
-**Carousel Navigation** — A `currentIndex` variable tracks the active slide. Clicking next or previous buttons updates the index and calls `updateCarousel()` to show the correct slide and highlight the matching dot. The carousel also auto-advances every five seconds using `setInterval()`.
+**Carousel Navigation** — A `currentIndex` variable tracks the active slide. Clicking next or previous buttons updates the index and calls `updateCarousel()` to show the correct slide and highlight the matching dot. The carousel auto-advances every five seconds using `setInterval()`, and pauses when the user hovers over it using `clearInterval()`.
+
+**Carousel Fade Transition** — Originally the carousel used `style.display` to switch slides, which caused an abrupt snap between them. I switched to using CSS opacity transitions instead. Slides are stacked using `position: absolute`, all starting at `opacity: 0`. The active slide gets an `.active` class which sets `opacity: 1`, creating a smooth fade. I also had to add `pointer-events: none` on inactive slides and `pointer-events: auto` on the active slide to fix hover and click issues on the images.
 
 **Description Display** — When the carousel updates, JavaScript queries the current slide's description text and injects it into the description div below using `querySelector()` and `textContent`.
 
+**Newsletter Form** — The form validates first name, last name, and email using regex patterns before allowing submission. If validation fails, an error message is displayed and the form shakes using a CSS keyframe animation to give clear visual feedback. If all fields are valid, a success message is shown and the fields are cleared. If else statement used to decide what form message shows and it's colour, so red for error and green for success!
+
 ## Additional CSS
 
-Images across the site use a greyscale hover effect with CSS `filter: grayscale(100%)` and a brightness transition to make the page feel more interactive.
+Images across the site use a greyscale hover effect with CSS `filter: grayscale(100%)` and a brightness transition to make the page feel more interactive. Only the active carousel slide responds to hover and click events using `pointer-events`.
 
-Smooth scrolling was added using a single line of CSS — `scroll-behavior: smooth` on the `html` element. This means clicking the nav links scrolls smoothly to each section instead of jumping instantly. I sourced this from [Go Make Things](https://gomakethings.com/how-to-animate-scrolling-to-anchor-links-with-one-line-of-css/).
+The theme toggle has a subtle scale animation on hover using `transform: scale(1.5)` with a 0.5s transition. I experimented with background colour transitions too but removed them as they looked off — the scale alone felt cleaner.
+
+Back to top arrows in each genre section use a flip and colour swap animation on hover, sourced from [Prismic](https://prismic.io/blog/css-hover-effects).
+
+The form shake animation uses CSS `@keyframes` to move the form left and right with increasing intensity, sourced from [Unused CSS](https://unused-css.com/blog/css-shake-animation/).
+
+Smooth scrolling was added using a single line of CSS — `scroll-behavior: smooth` on the `html` element, sourced from [Go Make Things](https://gomakethings.com/how-to-animate-scrolling-to-anchor-links-with-one-line-of-css/).
