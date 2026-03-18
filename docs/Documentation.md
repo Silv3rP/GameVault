@@ -12,7 +12,7 @@ Each genre section uses a two-column flex layout alternating between text and im
 
 I built the site in layers: HTML structure first, then CSS styling, then JavaScript interactivity.
 
-The dark mode toggle was implemented early since it affects the entire page. The carousel came next, followed by connecting the description text below it to update as users navigate between slides. The genre sections were then built, each following the same flex layout pattern to keep things consistent. Finally, I added the newsletter form and footer. 
+The dark mode toggle was implemented early since it affects the entire page. The carousel came next, followed by connecting the description text below it to update as users navigate between slides. The genre sections were then built, each following the same flex layout pattern to keep things consistent. Finally, I added the newsletter form, footer, and media queries for responsiveness.
 
 ## Challenges Faced
 
@@ -30,6 +30,8 @@ The `setInterval` on the carousel was causing problems — it kept advancing the
 
 Getting the regex patterns right for the form validation took some trial and error. I initially had a pattern that was too strict and was rejecting valid names. I settled on `/^[A-Za-z\s]{2,50}$/` for names and a standard email pattern that checks for the correct format.
 
+Adding responsive design brought its own set of issues. There was unexpected whitespace on the right side of the page on smaller screens, which I fixed by adding `overflow-x: hidden` to the html and body elements. The theme toggle kept overlapping the title on smaller screens because its `position: absolute` was overriding media query fixes — I worked around this by adjusting header padding and title font sizes per breakpoint. The navigation dots were sitting below the carousel instead of inside it, so I had to move them inside the `.slider-carousel` div in the HTML and remove `overflow: hidden` from the carousel since it was clipping them. Images were also appearing zoomed in on laptop and desktop screens, which I fixed with explicit heights and consistent use of `object-fit: cover`.
+
 ## JavaScript Interactivity
 
 **Dark Mode Toggle** — Clicking the button toggles a `.dark-mode` class on the body element. CSS handles the visual changes. localStorage saves the user's preference so it persists across sessions.
@@ -40,7 +42,7 @@ Getting the regex patterns right for the form validation took some trial and err
 
 **Description Display** — When the carousel updates, JavaScript queries the current slide's description text and injects it into the description div below using `querySelector()` and `textContent`.
 
-**Newsletter Form** — The form validates first name, last name, and email using regex patterns before allowing submission. If validation fails, an error message is displayed and the form shakes using a CSS keyframe animation to give clear visual feedback. If all fields are valid, a success message is shown and the fields are cleared. If else statement used to decide what form message shows and it's colour, so red for error and green for success!
+**Newsletter Form** — The form validates first name, last name, and email using regex patterns before allowing submission. If validation fails, an error message is displayed and the form shakes using a CSS keyframe animation to give clear visual feedback. If all fields are valid, a success message is shown and the fields are cleared. An if/else statement controls which message shows and its colour — red for error, green for success.
 
 ## Additional CSS
 
