@@ -55,3 +55,8 @@ Back to top arrows in each genre section use a flip and colour swap animation on
 The form shake animation uses CSS `@keyframes` to move the form left and right with increasing intensity, sourced from [Unused CSS](https://unused-css.com/blog/css-shake-animation/).
 
 Smooth scrolling was added using a single line of CSS — `scroll-behavior: smooth` on the `html` element, sourced from [Go Make Things](https://gomakethings.com/how-to-animate-scrolling-to-anchor-links-with-one-line-of-css/).
+
+## Reflection
+
+Overall I really enjoyed working on this project. It was challenging at times, especially the carousel & media queries which took a lot of hours to get right, but that made it more satisfying when it finally worked. I learned a lot about how CSS positioning actually works, how JavaScript interacts with the DOM, and how small changes can have big knock-on effects across a whole page. Going in I had a basic understanding of HTML and CSS but by the end I felt much more confident jumping between the three languages and debugging issues myself. If I had more time I would add a hamburger menu for mobile and potentially pull in live game data from an external API. Overall I'm happy with how GameVault turned out.
+
