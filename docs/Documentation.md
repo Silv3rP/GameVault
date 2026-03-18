@@ -18,7 +18,7 @@ The dark mode toggle was implemented early since it affects the entire page. The
 
 Positioning the dark mode toggle in the top-right corner was tricky. I settled on `position: absolute` within a `position: relative` header, and used a flex container to centre the navbar while keeping the title left-aligned.
 
-The carousel required the most adjustments. The arrow buttons and navigation dots were initially appearing completely outside the carousel container. Through trial and error and referencing W3Schools, I figured out that using absolute positioning with `top: 50%` and `transform: translateY(-50%)` for the arrows, and `bottom: 5%` for the dots, finally placed them correctly.
+The carousel required the most adjustments. The arrow buttons and navigation dots were initially appearing completely outside the carousel container. Through trial and error and referencing W3Schools, I figured out that using absolute positioning with `top: 50%` and `transform: translateY(-50%)` for the arrows, and `bottom: 5%` for the dots, but this caused an issue where the dots were sitting under the carousel and so I changed this value to `bottom:10%` to get the desired results.
 
 Centring the genre names on the carousel images took several attempts, eventually resolved with `top: 50%`, `left: 50%`, and `transform: translate(-50%, -50%)`.
 
