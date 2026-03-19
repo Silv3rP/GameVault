@@ -36,6 +36,14 @@ No backend or database is included as this was outside the scope of the assignme
 ## Author
 Colm Nolan/ColmN-Dev
 
-## Webpage Preview
+---
 
-![GameVault-Homepage](images/GameVault-Home.png)
+## Webpage Preview Lightmode
+
+![GameVault-Homepage](images/GVLM.png)
+
+---
+
+## Webpage Preview Darkmode
+
+![GameVault-Homepage](images/GVDM.png)
