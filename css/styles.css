@@ -602,6 +602,11 @@ footer p {
         padding: 1em;
     }
 
+    .user-form button {
+        width: 100%;
+        max-width: 300px;
+    }
+
     .form-title {
         font-size: 40px;
     }
