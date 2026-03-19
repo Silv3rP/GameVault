@@ -602,6 +602,11 @@ footer p {
         padding: 1em;
     }
 
+    .user-form input {
+        width: 75%;
+        padding: 0.5em;
+    }
+
     .user-form button {
         width: 75%;
         padding: 0.5em;
