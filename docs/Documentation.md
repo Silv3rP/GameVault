@@ -4,7 +4,7 @@
 
 I chose a dark-themed gaming site with an orange and blue colour scheme. The orange serves as the primary accent in light mode, switching to blue in dark mode to maintain visual consistency. I used the Orbitron font for a pixel-art aesthetic that fits the gaming theme.
 
-The carousel was the centrepiece — showing one game per genre at a time to keep the focus clean and simple. Each carousel image links directly to the game's Steam store page, opening in a new tab, so users can click through to find out more or purchase any game that interests them.
+The carousel was the centrepiece — showing one game per genre at a time to keep the focus clean and simple. Each carousel image originally linked directly to the game's Steam store page, opening in a new tab, so users can click through to find out more or purchase any game that interests them, however, after some thought I decided to update to link directly to their corresponding genre section further down the page which will take the user to the exact game they clicked on, rather than duplicating the Steam store links already on the game cards.
 
 Each genre section uses a two-column flex layout alternating between text and image, with some cards having the image on the left and text on the right and vice versa to break up the layout visually. The card backgrounds use orange (`#e48520`) in light mode and blue in dark mode to stay consistent with the overall colour scheme.
 
@@ -42,7 +42,7 @@ Adding responsive design brought its own set of issues. There was unexpected whi
 
 **Description Display** — When the carousel updates, JavaScript queries the current slide's description text and injects it into the description div below using `querySelector()` and `textContent`.
 
-**Newsletter Form** — The form validates first name, last name, and email using regex patterns before allowing submission. If validation fails, an error message is displayed and the form shakes using a CSS keyframe animation to give clear visual feedback. If all fields are valid, a success message is shown and the fields are cleared. An if/else statement controls which message shows and its colour — red for error, green for success.
+**Newsletter Form** — The form validates first name, last name, and email using regex patterns before allowing submission. If validation fails, an error message is displayed and the form shakes using a CSS keyframe animation to give clear visual feedback. If all fields are valid, a success message is shown and the fields are cleared. An if/else statement controls which message shows and its colour — red for error, green for success. Both the error and success messages fade out automatically. This was done using two `setTimeout` calls — one at 3000ms to add a `message-fade-out` CSS class which triggers the fade animation, and a second at 4000ms to clear the message text and remove all classes, resetting it for the next submission.
 
 ## Additional CSS
 

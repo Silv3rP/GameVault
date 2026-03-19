@@ -443,6 +443,8 @@ span{
 
 .error-message {
     color: red;
+    background-color: #111;
+    border-radius: 8px;
     margin-bottom: 1em;
     font-weight: bold;
     transition: transform 1.5s ease, color 1.5s ease;
@@ -472,11 +474,19 @@ span{
 
 .success-message {
     color: green;
+    background-color: #111;
+    border-radius: 8px;
     margin-bottom: 1em;
     font-weight: bold;
     transition: transform 1.5s ease, color 1.5s ease;
     font-style: oblique;
     filter: brightness(2);
+}
+
+/* fade-out for both error and success messages */
+.message-fade-out {
+    opacity: 0;
+    transition: opacity 1.5s ease;
 }
 
 /* ===== FOOTER ===== */

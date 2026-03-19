@@ -27,10 +27,20 @@
             // stop form submitting and show error message and add shake animation to the form for visual feedback on error
             e.preventDefault();
             message.className = "error-message";
-            message.textContent = "Please fill in all fields with a name containing at least 2 characters and provide a valid email address.";
+            message.textContent = "Please fill in all fields with a name containing at least 2 characters and provide a valid email address!";
             form.classList.add("shake");
-            setTimeout(() => { form.classList.remove("shake"); }, 600);
-            return;
+            setTimeout(() => { 
+                form.classList.remove("shake"); 
+            }, 4000);
+            
+            // fade out the error message after 3 seconds, then clear the message after 4 seconds
+            setTimeout(() => {
+                message.classList.add("message-fade-out");
+            }, 3000);
+
+            setTimeout(() => {
+                message.textContent = "";
+            }, 4000);
 
             
         }
@@ -42,6 +52,16 @@
             fnameInput.value = '';
             lnameInput.value = '';
             emailInput.value = '';
+            
+            // fade out the success message after 3 seconds, then clear the message after 4 seconds
+            setTimeout(() => {
+                message.classList.add("message-fade-out");
+            }, 3000);
+
+            setTimeout(() => {
+                message.textContent = "";
+                message.className = "";
+            }, 4000);
         }
     });
 
