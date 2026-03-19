@@ -60,7 +60,6 @@
 
             setTimeout(() => {
                 message.textContent = "";
-                message.className = "";
             }, 4000);
         }
     });
