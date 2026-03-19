@@ -14,6 +14,9 @@ I built the site in layers: HTML structure first, then CSS styling, then JavaScr
 
 The dark mode toggle was implemented early since it affects the entire page. The carousel came next, followed by connecting the description text below it to update as users navigate between slides. The genre sections were then built, each following the same flex layout pattern to keep things consistent. Finally, I added the newsletter form, footer, and media queries for responsiveness.
 
+I added additional elements such as a favicon so the site displays a custom icon in browser tabs. A web app manifest was also added so the site can be saved to a mobile home screen and behave like a native app, with a custom icon and name. This was done by creating a `manifest.json` file linked in the `<head>` of the HTML, specifying the app name, icons, and theme colour.
+
+
 ## Challenges Faced
 
 Positioning the dark mode toggle in the top-right corner was tricky. I settled on `position: absolute` within a `position: relative` header, and used a flex container to centre the navbar while keeping the title left-aligned.
