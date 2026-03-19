@@ -36,4 +36,6 @@ No backend or database is included as this was outside the scope of the assignme
 ## Author
 Colm Nolan/ColmN-Dev
 
-![GameVault-Homepage](../GameVault/images/GameVault-Home.png)
+## Webpage Preview
+
+![GameVault-Homepage](images/GameVault-Home.png)
