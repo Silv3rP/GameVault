@@ -9,7 +9,7 @@ https://colmn-dev.github.io/GameVault/
 
 🔗 Vercel: 
 
-https://game-vault-io.vercel.app/
+https://game-vault-cnd.vercel.app/
 
 ---
 
