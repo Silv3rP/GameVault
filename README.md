@@ -6,7 +6,7 @@ It was created as part of a college assignment to demonstrate front-end developm
 🔗 Live site:  
 https://colmn-dev.github.io/GameVault/
 
-🔗 Vercel:
+🔗 Vercel: 
 https://game-vault-io.vercel.app/
 
 ---
