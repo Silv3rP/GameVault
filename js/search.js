@@ -14,9 +14,14 @@
         
         // If input is empty, show hint to enter search term
         if (value.length === 0) {
-            results.innerHTML = "<span><p class='clear-hint'>No results found. Enter a title to search.</p></span>";
-            return;
-        }
+        const hint = document.createElement('span');
+        const p = document.createElement('p');
+        p.className = 'clear-hint';
+        p.textContent = "No results found. Enter a title to search.";
+        hint.appendChild(p);
+        results.appendChild(hint);
+        return;
+}
         
 
             
