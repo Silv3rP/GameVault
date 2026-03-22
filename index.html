@@ -54,6 +54,20 @@
         </nav>
     </header>
 
+        <section id="search-section">
+            <p class="search-text">Find Your</p>
+
+            <form class="search-wrapper" id="searchForm">
+                <input type="search" id="gameSearch" placeholder="Search games..." autocomplete="off">
+                <button type="submit" class="search-button">&#x1F50E;&#xFE0E;</button>
+            </form>
+    
+            <p class="search-text">Favourite Games</p>
+        </section>
+        
+        <p id="search-hint" class="clear-hint"></p>
+        <div id="results"></div>
+
         <main>
             <h2 id="genre-showcase">Game genre showcase</h2>
         <section class="component-carousel">
@@ -119,7 +133,7 @@
             <p id="slide-description">Fast paced action and combat</p>
         </div>
 
-        <section id="shooter">
+        <section id="shooter" data-genre="shooter">
             <h2 class="genre-title">Shooter <a href="#" class="back-to-top" title="Back to Top">⬆</a></h2>
             <div class="genre-card">
                 <div class="genre-content">
@@ -173,7 +187,7 @@
             </div>
         </section>
 
-        <section id="rpg">
+        <section id="rpg" data-genre="rpg">
             <h2 class="genre-title">RPG<a href="#" class="back-to-top" title="Back to Top">⬆</a></h2>
             <div class="genre-card">
                 <div class="genre-content">
@@ -229,7 +243,7 @@
             </div>
         </section>
 
-        <section id="horror">
+        <section id="horror" data-genre="horror">
             <h2 class="genre-title">Horror<a href="#" class="back-to-top" title="Back to Top">⬆</a></h2>
             <div class="genre-card">
                 <div class="genre-content">
@@ -283,7 +297,7 @@
             </div>
         </section>
 
-        <section id="indie">
+        <section id="indie" data-genre="indie">
             <h2 class="genre-title">Indie<a href="#" class="back-to-top" title="Back to Top">⬆</a></h2>
             <div class="genre-card">
                 <div class="genre-content">
@@ -337,7 +351,8 @@
                     </p>
                 </div>
             </div>
-        
+        </section>
+
         <section id="newsletter">
             <h2 class="form-title">Newsletter<a href="#" class="back-to-top" title="Back to Top">⬆</a></h2>
             <form class="user-form">
@@ -366,5 +381,6 @@
     <script src="js/darkmode.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/form.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>
