@@ -3,8 +3,13 @@
 This project is a single-page application built with HTML, CSS, and JavaScript for **GameVault**, a video game genre encyclopedia covering Shooter, RPG, Horror, and Indie games.  
 It was created as part of a college assignment to demonstrate front-end development, interactivity, and JavaScript functionality.
 
-🔗 Live site:  
+🔗 Live site:
+
 https://colmn-dev.github.io/GameVault/
+
+🔗 Vercel: 
+
+https://game-vault-cnd.vercel.app/
 
 ---
 
