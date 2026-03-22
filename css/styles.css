@@ -13,7 +13,8 @@ body {
     font-family: 'Orbitron', Verdana, sans-serif;
     background-color: lightgrey;
     color: #000;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease, 
+    color 0.3s ease;
 }
 
 html, body {
@@ -23,7 +24,8 @@ html, body {
 .dark-mode {
     background-color: black;
     color: #fff;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease, 
+    color 0.3s ease;
 }
 
 /* ===== HEADER ===== */
@@ -154,7 +156,8 @@ header {
 #search-section input:hover {
     background-color: lightgray;
     color: #000;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, 
+    color 0.3s ease;
 }
 
 ::placeholder {
@@ -192,7 +195,8 @@ header {
 .dark-mode #search-section input:hover {
     background-color: #000;
     color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, 
+    color 0.3s ease;
 }
 
 .search-button {
@@ -542,7 +546,8 @@ span{
 }
 
 .genre-image:hover {
-    filter: brightness(0.5) grayscale(100%);
+    filter: brightness(0.5) 
+    grayscale(100%);
 }
 
 .genre-image {
@@ -670,7 +675,6 @@ span{
     font-weight: bold;
     transition: transform 1.5s ease, color 1.5s ease;
     font-style: oblique;
-    filter: brightness(2);
 }
 
 
