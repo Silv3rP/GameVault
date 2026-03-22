@@ -223,7 +223,7 @@ header {
     color: blue;
 }
 
-.clear-hint {
+.empty-search {
     color: #000;
     text-align: center;
     margin-top: 1em;
@@ -234,7 +234,7 @@ header {
     filter: brightness(2);
 }
 
-.dark-mode .clear-hint {
+.dark-mode .empty-search {
     color: #fff;
 }
 

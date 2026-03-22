@@ -16,7 +16,7 @@
         if (value.length === 0) {
         const hint = document.createElement('span');
         const p = document.createElement('p');
-        p.className = 'clear-hint';
+        p.className = 'empty-search';
         p.textContent = "No results found. Enter a title to search.";
         hint.appendChild(p);
         results.appendChild(hint);
@@ -26,7 +26,7 @@
 
             
         // If user has entered a search term, show hint to clear results and fade out hint after 3 seconds
-        const hint = document.getElementById('search-hint');
+        const hint = document.getElementById('clear-hint');
 
         if (value.length > 0) {
             hint.textContent = "Press Esc or Delete to clear";
