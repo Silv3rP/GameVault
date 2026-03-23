@@ -114,7 +114,7 @@ header {
     gap: 10px;
     margin: 1em 0;
     padding: 0.5em;
-    background-image: url(../images/banner.png);
+    background-image: url(../images/bannerLM.png);
     background-size: cover;
     border: 1px solid #111;
     border-radius: 4px;
@@ -182,7 +182,7 @@ header {
     }
 
 .dark-mode #search-section {
-    background-image: url(../images/banner.png);
+    background-image: url(../images/bannerDM.png);
     background-size: cover;
     color: #fff;
     border: 1px solid #fff;

@@ -62,6 +62,9 @@ The form shake animation uses CSS `@keyframes` to move the form left and right w
 
 Smooth scrolling was added using a single line of CSS — `scroll-behavior: smooth` on the `html` element, sourced from [Go Make Things](https://gomakethings.com/how-to-animate-scrolling-to-anchor-links-with-one-line-of-css/).
 
+The search bar was updated to have a lightmode background image sourced from [vecteezy](https://www.vecteezy.com/photo/53857937-colorful-space-background-with-a-red-and-blue-swirl-the-colors-are-vibrant-and-the-swirls-are-dynamic) and a darkmode background image sourced from [vecteezy]
+(https://www.vecteezy.com/photo/11044489-panorama-milky-way-galaxy-with-stars-and-space-dust-in-the-universe)
+
 ## Reflection
 
 Overall I really enjoyed working on this project. It was challenging at times, especially the carousel which took a lot of hours to get right, but that made it more satisfying when it finally worked. I learned a lot about how CSS positioning actually works, how JavaScript interacts with the DOM, and how small changes can have big knock-on effects across a whole page. Going in I had a basic understanding of HTML and CSS but by the end I felt much more confident jumping between the three languages and debugging issues myself. Overall I'm happy with how GameVault turned out.
