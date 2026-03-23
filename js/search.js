@@ -71,12 +71,12 @@
 
                 // Reduced price
                 const price = document.createElement('p');
-                price.textContent = `Price: €${game.salePrice}`;
+                price.textContent = `Price: $${game.salePrice}`;
                 
                 // Normal price
                 const normal = document.createElement('span');
                 normal.id = 'normal-price';
-                normal.textContent = `Was: €${game.normalPrice}`;
+                normal.textContent = `Was: $${game.normalPrice}`;
                 price.appendChild(document.createElement('br'));
                 price.appendChild(normal); 
 
