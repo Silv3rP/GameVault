@@ -1,6 +1,6 @@
 # GameVault – Video Game Genre Encyclopedia
 
-This project is a single-page application built with HTML, CSS, and JavaScript for **GameVault**, a video game genre encyclopedia covering Shooter, RPG, Horror, and Indie games.  
+This project is a single-page application built with HTML, CSS, and JavaScript for GameVault, a video game encyclopedia. It highlights four genres — Shooter, RPG, Horror, and Indie — each featuring three curated games, with additional search functionality available via the CheapShark API.  
 It was created as part of a college assignment to demonstrate front-end development, interactivity, and JavaScript functionality.
 
 🔗 Live site:
