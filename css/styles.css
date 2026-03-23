@@ -114,7 +114,8 @@ header {
     gap: 10px;
     margin: 1em 0;
     padding: 0.5em;
-    background-color: #e48520;
+    background-image: url(../images/banner.png);
+    background-size: cover;
     border: 1px solid #111;
     border-radius: 4px;
     width: 100%;
@@ -132,7 +133,7 @@ header {
     font-size: 25px;
     width: 40%;
     font-weight: bold;
-    color: #111;
+    color: darkgray;
     text-shadow: 1px 0 1px #000;
     text-align: center;
     margin-right: 1.5em;
@@ -181,9 +182,14 @@ header {
     }
 
 .dark-mode #search-section {
-    background-color: blue;
+    background-image: url(../images/banner.png);
+    background-size: cover;
     color: #fff;
     border: 1px solid #fff;
+}
+
+.dark-mode .search-text {
+    color: #fff;
 }
 
 .dark-mode #search-section input {
