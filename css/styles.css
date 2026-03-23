@@ -116,7 +116,7 @@ header {
     padding: 0.5em;
     background-image: url(../images/bannerLM.png);
     background-size: cover;
-    border: 1px solid #111;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     border-radius: 4px;
     width: 100%;
     height: fit-content;
@@ -185,7 +185,7 @@ header {
     background-image: url(../images/bannerDM.png);
     background-size: cover;
     color: #fff;
-    border: 1px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 .dark-mode .search-text {
@@ -196,6 +196,7 @@ header {
     background-color: #333;
     color: #fff;
     border: 1px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .dark-mode #search-section input:hover {
@@ -532,6 +533,7 @@ p{
     font-size: 20px;
     padding: 0.5em;
     background-color: darkgray;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     transition: filter 0.3s ease;
 }
 
@@ -542,6 +544,7 @@ span{
 .dark-mode .genre-text {
     background-color: #333;
     color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 .genre-gif {
@@ -549,6 +552,7 @@ span{
     height: 350px;
     object-fit: cover;
     transition: filter 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 .genre-image:hover {
@@ -562,6 +566,7 @@ span{
     object-fit: cover;
     display: block;
     transition: filter 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 /* ===== NEWSLETTER SIGNUP ===== */
