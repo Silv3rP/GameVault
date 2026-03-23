@@ -27,7 +27,7 @@ https://game-vault-cnd.vercel.app/
 - Four genre sections with game images and external links
 - Dark mode toggle
 - Newsletter signup form with JavaScript validation
-- Searchbar fetch api 
+- Game search with CheapShark API
 - Responsive design
 
 ---
