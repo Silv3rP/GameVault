@@ -119,7 +119,7 @@
         searchInput.blur();
     }
 
-    window.addEventListener('popstate', clearSearch);
+    window.addEventListener('pagehide', clearSearch);
 
     // Clear input/results when user presses Escape
     searchInput.addEventListener('keydown', (e) => {
