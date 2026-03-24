@@ -62,8 +62,10 @@ The form shake animation uses CSS `@keyframes` to move the form left and right w
 
 Smooth scrolling was added using a single line of CSS — `scroll-behavior: smooth` on the `html` element, sourced from [Go Make Things](https://gomakethings.com/how-to-animate-scrolling-to-anchor-links-with-one-line-of-css/).
 
-The search bar was updated to have a lightmode background image sourced from [vecteezy#1](https://www.vecteezy.com/photo/53857937-colorful-space-background-with-a-red-and-blue-swirl-the-colors-are-vibrant-and-the-swirls-are-dynamic) and a darkmode background image sourced from [vecteezy#2]
-(https://www.vecteezy.com/photo/11044489-panorama-milky-way-galaxy-with-stars-and-space-dust-in-the-universe)
+The search bar was updated to have a lightmode background image sourced from [vecteezy#1](https://www.vecteezy.com/photo/53857937-colorful-space-background-with-a-red-and-blue-swirl-the-colors-are-vibrant-and-the-swirls-are-dynamic).
+
+The search bar was updated to have a darkmode background image sourced from [vecteezy#2]
+(https://www.vecteezy.com/photo/11044489-panorama-milky-way-galaxy-with-stars-and-space-dust-in-the-universe).
 
 ## Reflection
 
