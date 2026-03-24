@@ -17,22 +17,23 @@ Created as part of a college assignment to demonstrate front-end development, Ja
 ## Tech Stack
 - **HTML** – semantic single-page structure
 - **CSS** – layout, styling, responsive design, and dark mode
-- **JavaScript** – interactivity, DOM manipulation, and API integration
+- **JavaScript** – interactivity, DOM manipulation, and REST API integration
 
 ---
 
 ## Features
-- Auto-rotating genre carousel with manual navigation, pause on hover, and smooth fade transitions
-- Four genre sections with curated game info, images, and Steam links
-- Game deal search via CheapShark REST API with result cards showing sale price, normal price, and Steam rating
-- Dark mode toggle with localStorage persistence
-- Newsletter signup form with regex validation, shake animation, and fade-out feedback messages
-- Responsive design across mobile, tablet, and desktop breakpoints
-- Smooth scroll navigation
-- PWA support via web app manifest (installable on mobile home screen)
-- Open Graph and social sharing meta tags
-- Favicon and Orbitron font for gaming aesthetic
-- Modular JavaScript across four separate files (dark-mode.js, carousel.js, form.js, search.js)
+
+- Auto-rotating genre carousel with manual navigation, pause-on-hover, and smooth fade transitions  
+- Four curated genre sections with game info, images, and Steam store links  
+- Game deal search using the CheapShark REST API, fetching the **top 12 results** with sale price, normal price, and Steam rating displayed on interactive result cards  
+- Dark mode toggle with persistent state via `localStorage`  
+- Newsletter signup form with regex validation, shake animation, and fade-out feedback messages  
+- Fully responsive design for mobile, tablet, and desktop  
+- Smooth scrolling navigation between sections  
+- PWA support via web app manifest (installable on mobile home screen)  
+- Open Graph and social sharing meta tags for better link previews  
+- Favicon and Orbitron font for a consistent gaming aesthetic  
+- Modular JavaScript structure with separate files: `dark-mode.js`, `carousel.js`, `form.js`, and `search.js`
 
 ---
 
