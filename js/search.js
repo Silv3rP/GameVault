@@ -29,7 +29,8 @@
         const hint = document.getElementById('clear-hint');
 
         if (value.length > 0) {
-            hint.textContent = "Press Esc or Delete to clear";
+            hint.textContent = "Press Esc to clear";
+            hint.classList.remove("message-fade-out");
         } 
 
         setTimeout(() => {
@@ -92,6 +93,7 @@
 
                 const img = document.createElement('img');
                 img.src = game.thumb;
+                img.loading = "lazy";
                 img.alt = `${game.title} thumbnail`;
                 img.className = 'game-thumbnail';
 
@@ -110,12 +112,20 @@
         }
     });
 
-    // Clear input/results when user presses Escape or Delete key
+    // Clear input and results when user clicks back button
+    const clearSearch = () => {
+        searchInput.value = '';
+        results.innerHTML = '';
+        searchInput.blur();
+    }
+
+    window.addEventListener('popstate', clearSearch);
+
+    // Clear input/results when user presses Escape
     searchInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' || e.key === 'Delete') {
-            searchInput.value = '';
-            results.innerHTML = '';
-            
+        if (e.key === 'Escape') {
+            clearSearch();
+            searchInput.focus();
         }
     });
 
