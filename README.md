@@ -46,7 +46,7 @@ Colm Nolan/ColmN-Dev
 
 ## Webpage Preview Lightmode
 
-![GameVault-Homepage](images/GVLM.png)
+![GameVault-Homepage]
 
 ---
 
