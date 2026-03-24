@@ -1,55 +1,57 @@
 # GameVault – Video Game Genre Encyclopedia
 
-This project is a single-page application built with HTML, CSS, and JavaScript for GameVault, a video game encyclopedia. It highlights four genres — Shooter, RPG, Horror, and Indie — each featuring three curated games, with additional search functionality available via the CheapShark API.  
-It was created as part of a college assignment to demonstrate front-end development, interactivity, and JavaScript functionality.
+A single-page application built with HTML, CSS, and JavaScript. GameVault is a video game encyclopedia highlighting four genres — Shooter, RPG, Horror, and Indie — each featuring three curated games, with additional game deal search functionality powered by the CheapShark REST API.
+
+Created as part of a college assignment to demonstrate front-end development, JavaScript interactivity, and DOM manipulation.
 
 🔗 Live site:
 
-https://colmn-dev.github.io/GameVault/
-
+  https://colmn-dev.github.io/GameVault/
+  
 🔗 Vercel: 
 
-https://game-vault-cnd.vercel.app/
+  https://game-vault-cnd.vercel.app/
 
 ---
 
 ## Tech Stack
-
-- **HTML** – semantic single-page structure  
-- **CSS** – layout, styling, and responsive design  
-- **JavaScript** – interactivity and DOM manipulation  
+- **HTML** – semantic single-page structure
+- **CSS** – layout, styling, responsive design, and dark mode
+- **JavaScript** – interactivity, DOM manipulation, and REST API integration
 
 ---
 
 ## Features
 
-- Interactive genre carousel
-- Four genre sections with game images and external links
-- Dark mode toggle
-- Newsletter signup form with JavaScript validation
-- Game search with CheapShark API
-- Responsive design
+- Auto-rotating genre carousel with manual navigation, pause-on-hover, and smooth fade transitions  
+- Four curated genre sections with game info, images, and Steam store links  
+- Game deal search using the CheapShark REST API, fetching the **top 12 results** with sale price, normal price, and Steam rating displayed on interactive result cards  
+- Dark mode toggle with persistent state via `localStorage`  
+- Newsletter signup form with regex validation, shake animation, and fade-out feedback messages  
+- Fully responsive design for mobile, tablet, and desktop  
+- Smooth scrolling navigation between sections  
+- PWA support via web app manifest (installable on mobile home screen)  
+- Open Graph and social sharing meta tags for better link previews  
+- Favicon and Orbitron font for a consistent gaming aesthetic  
+- Modular JavaScript structure with separate files: `dark-mode.js`, `carousel.js`, `form.js`, and `search.js`
 
 ---
 
 ## Notes
-
-This site is a **static front-end project only**.  
+This site is a **static front-end project only**.
 No backend or database is included as this was outside the scope of the assignment.
 
 ---
 
 ## Author
-Colm Nolan/ColmN-Dev
+Colm Nolan / ColmN-Dev
 
 ---
 
-## Webpage Preview Lightmode
-
-![GameVault-Homepage](images/GVLM.png)
+## Webpage Preview – Light Mode
+![GameVault Homepage Light Mode](images/GVLM.png)
 
 ---
 
-## Webpage Preview Darkmode
-
-![GameVault-Homepage](images/GVDM.png)
+## Webpage Preview – Dark Mode
+![GameVault Homepage Dark Mode](images/GVDM.png)
