@@ -4,8 +4,13 @@ A single-page application built with HTML, CSS, and JavaScript. GameVault is a v
 
 Created as part of a college assignment to demonstrate front-end development, JavaScript interactivity, and DOM manipulation.
 
-🔗 Live site: https://colmn-dev.github.io/GameVault/
-🔗 Vercel: https://game-vault-cnd.vercel.app/
+🔗 Live site:
+
+  https://colmn-dev.github.io/GameVault/
+  
+🔗 Vercel: 
+
+  https://game-vault-cnd.vercel.app/
 
 ---
 
