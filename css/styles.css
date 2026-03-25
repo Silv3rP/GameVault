@@ -842,6 +842,10 @@ footer p {
         transition: filter 0.3s ease;
     }
 
+    .dark-mode .shooter-text {
+        background-color: #333;
+    }
+
     .genre-image {
         width: 100%;
         height: auto;
@@ -934,6 +938,10 @@ footer p {
         transition: filter 0.3s ease;
     }
 
+    .dark-mode .shooter-text {
+        background-color: #333;
+    }
+
     .game-title {
         font-weight: bold;
         text-align: center;
@@ -995,6 +1003,10 @@ footer p {
         background-color: darkgray;
         box-shadow: 0 4px 8px rgba(0,0,0,0.5);
         transition: filter 0.3s ease;
+    }
+
+    .dark-mode .shooter-text {
+        background-color: #333;
     }
 
     .game-title {
@@ -1077,6 +1089,10 @@ footer p {
         background-color: darkgray;
         box-shadow: 0 4px 8px rgba(0,0,0,0.5);
         transition: filter 0.3s ease;
+    }
+
+    .dark-mode .shooter-text {
+        background-color: #333;
     }
 
     .game-title {
