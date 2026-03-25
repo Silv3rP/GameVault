@@ -21,7 +21,9 @@
         hint.appendChild(p);
         results.appendChild(hint);
         return;
-}
+    }
+        //pushState for back button 
+        history.pushState(null, '', '');
         
 
             
@@ -119,7 +121,7 @@
         searchInput.blur();
     }
 
-    window.addEventListener('pagehide', clearSearch);
+    window.addEventListener('popstate', clearSearch);
 
     // Clear input/results when user presses Escape
     searchInput.addEventListener('keydown', (e) => {
