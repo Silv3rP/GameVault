@@ -741,6 +741,7 @@ footer p {
 
 /* ===== MEDIA QUERIES ===== */
 
+
 /* MOBILE */
 @media (max-width: 480px) {
 
@@ -832,6 +833,15 @@ footer p {
         width: 100%;
     }
 
+    .shooter-text {
+        width: 100%;
+        font-size: 20px;
+        padding: 0.5em;
+        background-color: darkgray;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        transition: filter 0.3s ease;
+    }
+
     .genre-image {
         width: 100%;
         height: auto;
@@ -842,7 +852,6 @@ footer p {
         width: 100%;
         height: auto;
         max-height: 220px;
-        display: block;
         margin: 0 auto;
     }
 
@@ -905,12 +914,29 @@ footer p {
         flex-direction: column;
         align-items: center;
         padding: 1em;
-        gap: 1em;
+        gap: 2em;
     }
 
     .genre-content a,
     .genre-text {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+     .shooter-text {
+        width: 100%;
+        font-size: 20px;
+        padding: 0.5em;
+        background-color: darkgray;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        transition: filter 0.3s ease;
+    }
+
+    .game-title {
+        font-weight: bold;
+        text-align: center;
     }
 
     .genre-image {
@@ -954,6 +980,27 @@ footer p {
     }
     .genre-text {
         width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1em;
+        font-size: 17.5px;
+        margin: 0 auto;
+    }
+
+    .shooter-text {
+        width: 40%;
+        font-size: 17.5px;
+        padding: 0.5em;
+        background-color: darkgray;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        transition: filter 0.3s ease;
+    }
+
+    .game-title {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
     }
 
     .genre-image {
@@ -1001,7 +1048,7 @@ footer p {
     .genre-title {
         font-size: 70px;
     }
-
+    
     .genre-content {
         flex-direction: row;
         align-items: flex-start;
@@ -1015,6 +1062,27 @@ footer p {
 
     .genre-text {
         width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1em;
+        font-size: 25px;
+        margin: 0 auto;
+    }
+
+    .shooter-text {
+        width: 40%;
+        font-size: 25px;
+        padding: 0.5em;
+        background-color: darkgray;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        transition: filter 0.3s ease;
+    }
+
+    .game-title {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
     }
 
     .genre-image {
@@ -1027,6 +1095,7 @@ footer p {
         width: 800px;
         height: 500px;
         object-fit: cover;
+        margin: 0 auto;
         
     }
 
