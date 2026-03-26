@@ -6,7 +6,7 @@ I chose a dark-themed gaming site with an orange and blue colour scheme. The ora
 
 The carousel was the centrepiece — showing one game per genre at a time to keep the focus clean and simple. Each carousel image originally linked directly to the game's Steam store page, but I decided to link them to their corresponding genre section on the page instead, so users land directly on the relevant games rather than duplicating links already on the cards.
 
-Each genre section uses a two-column flex layout alternating between text and image, with some cards having the image on the left and text on the right and vice versa to break up the layout visually. The card backgrounds use orange (`#e48520`) in light mode and blue in dark mode to stay consistent with the overall colour scheme.
+Each genre section uses a two-column flex layout alternating between text and image, with some cards having the image on the left and text on the right and vice versa to break up the layout visually. The card backgrounds initially used orange (`#e48520`) in light mode and blue in dark mode to stay consistent with the overall colour scheme. After implementing the searchbar banner, I made the design decision to use this banner across all genre cards for both light and dark mode. 
 
 A favicon was added so the site displays a custom icon in browser tabs. A web app manifest was also added so the site can be saved to a mobile home screen with a custom icon and name, done by creating a `manifest.json` file linked in the `<head>`, specifying the app name, icons, and theme colour.
 
@@ -14,7 +14,14 @@ A favicon was added so the site displays a custom icon in browser tabs. A web ap
 
 I built the site in layers: HTML structure first, then CSS styling, then JavaScript interactivity.
 
-The dark mode toggle was implemented early since it affects the entire page. The carousel came next, followed by connecting the description text below it to update as users navigate between slides. The genre sections were then built, each following the same flex layout pattern to keep things consistent. Finally, I added the newsletter form, footer, media queries for responsiveness, and a game search feature using the CheapShark API.
+The dark mode toggle was implemented early since it affects the entire page.
+The carousel came next, followed by connecting the description text below it to update as users navigate between slides.
+
+The genre sections were then built, each following the same flex layout pattern to keep things consistent.
+
+Then, I added the newsletter form, footer, media queries for responsiveness, and a game search feature using the CheapShark API.
+
+Additionally, I created a genre filter dropdown so users can decide what genre they want to display which uses the same banner as the searchbar for light/dark mode. 
 
 ## Challenges Faced
 
@@ -40,19 +47,21 @@ Adding responsive design brought a separate set of issues. There was unexpected 
 
 **Dark Mode Toggle** — Clicking the button toggles a `.dark-mode` class on the body element. CSS handles the visual changes. localStorage saves the user's preference so it persists across sessions.
 
+**Search Functionality** — On form submission, the search term is sent to the CheapShark API using `async/await` and `fetch()`. Results are displayed as cards showing the game title, sale price, normal price, and thumbnail image, which uses `object-fit: contain` to keep all images consistently sized. Each thumbnail acts as a link to the deal. Steam rating info is also shown, adapting depending on what data is returned — it includes the rating text, percentage, and review count; if no rating exists, the card displays "No rating". Results are limited to 12 and only appear after the user submits, not on every keystroke. Cards use a `transform: scale(1.05)` hover effect to make them stand out, and a hint reading "Press Esc to clear" appears above the results after search submission, fading out automatically after 3 seconds.
+
 **Carousel Navigation** — A `currentIndex` variable tracks the active slide. Clicking next or previous buttons updates the index and calls `updateCarousel()` to show the correct slide and highlight the matching dot. The carousel auto-advances every five seconds using `setInterval()`, and pauses when the user hovers over it using `clearInterval()`.
 
 **Carousel Fade Transition** — Originally the carousel used `style.display` to switch slides, which caused an abrupt snap between them. I switched to CSS opacity transitions instead. Slides are stacked using `position: absolute`, all starting at `opacity: 0`. The active slide gets an `.active` class which sets `opacity: 1`, creating a smooth fade. I also added `pointer-events: none` on inactive slides and `pointer-events: auto` on the active slide to fix hover and click issues on the images.
 
 **Description Display** — When the carousel updates, JavaScript queries the current slide's description text and injects it into the description div below using `querySelector()` and `textContent`.
 
-**Search Functionality** — On form submission, the search term is sent to the CheapShark API using `async/await` and `fetch()`. Results are displayed as cards showing the game title, sale price, normal price, and thumbnail image, which uses `object-fit: contain` to keep all images consistently sized. Each thumbnail acts as a link to the deal. Steam rating info is also shown, adapting depending on what data is returned — it includes the rating text, percentage, and review count; if no rating exists, the card displays "No rating". Results are limited to 12 and only appear after the user submits, not on every keystroke. Cards use a `transform: scale(1.05)` hover effect to make them stand out, and a hint reading "Press Esc to clear" appears above the results after search submission, fading out automatically after 3 seconds.
+**Genre Filter** — A dropdown above the genre sections allows users to filter which genre is displayed. Selecting a specific genre hides the other three sections using `style.display = 'none'`, while selecting `"All Genres"` restores all sections to `style.display = 'block'`. This was implemented using a `change` event listener on the dropdown, `querySelectorAll` to grab all genre sections, and `forEach` with an if/else to check each section's `data-genre` attribute against the selected value.
 
 **Newsletter Form** — The form validates first name, last name, and email using regex patterns before allowing submission. If validation fails, an error message is displayed and the form shakes using a CSS keyframe animation for visual feedback. If all fields are valid, a success message is shown and the fields are cleared. Both messages fade out automatically using two `setTimeout` calls — one at 3000ms to trigger the fade animation and another at 4000ms to clear the message entirely.
 
 ## Additional CSS
 
-Images across the site use a greyscale hover effect with CSS `filter: grayscale(100%)` and a brightness transition to make the page feel more interactive. Only the active carousel slide responds to hover and click events using `pointer-events`.
+Images across the site use a greyscale hover effect with CSS `filter: grayscale(100%)` and a brightness transition as well as `transform: scale()` transition to make the page feel more interactive. Only the active carousel slide responds to hover and click events using `pointer-events`.
 
 The theme toggle has a subtle scale animation on hover using `transform: scale(1.2)` with a 0.5s transition. I experimented with background colour transitions too but removed them as they looked off — the scale alone felt cleaner.
 
@@ -68,4 +77,4 @@ The search bar was updated to have a darkmode background image sourced from [vec
 
 ## Reflection
 
-Overall I really enjoyed working on this project. It was challenging at times, especially the carousel which took a lot of hours to get right, but that made it more satisfying when it finally worked. I learned a lot about how CSS positioning actually works, how JavaScript interacts with the DOM, and how small changes can have big knock-on effects across a whole page. Going in I had a basic understanding of HTML and CSS but by the end I felt much more confident jumping between the three languages and debugging issues myself. Overall I'm happy with how GameVault turned out.
+Overall I really enjoyed working on this project. It was challenging at times, especially the carousel which took a lot of hours to get right, but that made it more satisfying when it finally worked. I learned a lot about how CSS positioning actually works, how JavaScript interacts with the DOM, and how small changes can have big knock-on effects across a whole page. Going in I had a basic understanding of HTML and CSS but by the end I felt much more confident jumping between the three languages and debugging issues myself. If I had more time, I would have filtered the search result store links but regardless, I'm happy with how GameVault turned out.

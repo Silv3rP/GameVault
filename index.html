@@ -69,7 +69,7 @@
         <div id="results"></div>
 
         <main>
-            <h2 id="genre-showcase">Game genre showcase</h2>
+            <h2 id="genre-showcase">Game Genre Showcase</h2>
         <section class="component-carousel">
             <div id="carousel-container" class="carousel-container">
                 <div class="slider-container">
@@ -133,7 +133,17 @@
             <p id="slide-description">Fast paced action and combat</p>
         </div>
 
-        <section id="shooter" data-genre="shooter">
+        <section>
+            <select id="genre-filter" aria-label="Filter games by genre" title="Select what genres you want to show">
+                <option value="all">All Genres</option>
+                <option value="shooter">Shooter</option>
+                <option value="rpg">RPG</option>
+                <option value="horror">Horror</option>
+                <option value="indie">Indie</option>
+            </select>
+        </section>
+
+        <section id="shooter" data-genre="shooter" class="genre-section">
             <h2 class="genre-title">Shooter <a href="#" class="back-to-top" title="Back to Top">⬆</a></h2>
             <div class="genre-card">
                 <div class="genre-content">
@@ -190,7 +200,7 @@
             </div>
         </section>
 
-        <section id="rpg" data-genre="rpg">
+        <section id="rpg" data-genre="rpg" class="genre-section">
             <h2 class="genre-title">RPG<a href="#" class="back-to-top" title="Back to Top">⬆</a></h2>
             <div class="genre-card">
                 <div class="genre-content">
@@ -249,7 +259,7 @@
             </div>
         </section>
 
-        <section id="horror" data-genre="horror">
+        <section id="horror" data-genre="horror" class="genre-section">
             <h2 class="genre-title">Horror<a href="#" class="back-to-top" title="Back to Top">⬆</a></h2>
             <div class="genre-card">
                 <div class="genre-content">
@@ -306,7 +316,7 @@
             </div>
         </section>
 
-        <section id="indie" data-genre="indie">
+        <section id="indie" data-genre="indie" class="genre-section">
             <h2 class="genre-title">Indie<a href="#" class="back-to-top" title="Back to Top">⬆</a></h2>
             <div class="genre-card">
                 <div class="genre-content">
@@ -394,5 +404,6 @@
     <script src="js/carousel.js"></script>
     <script src="js/form.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/filter.js"></script>
 </body>
 </html>
