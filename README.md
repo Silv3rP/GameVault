@@ -23,17 +23,18 @@ Created as part of a college assignment to demonstrate front-end development, Ja
 
 ## Features
 
-- Auto-rotating genre carousel with manual navigation, pause-on-hover, and smooth fade transitions  
-- Four curated genre sections with game info, images, and Steam store links  
-- Game deal search using the CheapShark REST API, fetching the **top 12 results** with sale price, normal price, and Steam rating displayed on interactive result cards  
-- Dark mode toggle with persistent state via `localStorage`  
-- Newsletter signup form with regex validation, shake animation, and fade-out feedback messages  
-- Fully responsive design for mobile, tablet, and desktop  
-- Smooth scrolling navigation between sections  
-- PWA support via web app manifest (installable on mobile home screen)  
-- Open Graph and social sharing meta tags for better link previews  
-- Favicon and Orbitron font for a consistent gaming aesthetic  
-- Modular JavaScript structure with separate files: `dark-mode.js`, `carousel.js`, `form.js`, and `search.js`
+* Auto-rotating genre carousel with manual navigation, pause-on-hover, and smooth fade transitions
+* Genre filter dropdown allowing users to display all genres or a single genre of their choice
+* Four curated genre sections with game info, images, and Steam store links
+* Game deal search using the CheapShark REST API, fetching the top 12 results with sale price, normal price, and Steam rating displayed on interactive result cards
+* Dark mode toggle with persistent state via `localStorage`
+* Newsletter signup form with regex validation, shake animation, and fade-out feedback messages
+* Fully responsive design for mobile, tablet, and desktop
+* Smooth scrolling navigation between sections
+* PWA support via web app manifest (installable on mobile home screen)
+* Open Graph and social sharing meta tags for better link previews
+* Favicon and Orbitron font for a consistent gaming aesthetic
+* Modular JavaScript structure with separate files: `dark-mode.js`, `carousel.js`, `form.js`, `filter.js`, and `search.js`
 
 ---
 

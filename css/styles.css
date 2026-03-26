@@ -154,13 +154,13 @@ header {
     text-align: left;
     padding: 0.5em;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: background-color 0.3s ease-in-out, 
+    color 0.3s ease-in-out;
 }
 
 #search-section input:hover {
     background-color: lightgray;
     color: #000;
-    transition: background-color 0.3s ease-in-out, 
-    color 0.3s ease-in-out;
 }
 
 ::placeholder {
