@@ -56,16 +56,27 @@
 
         <section id="search-section">
             <p class="search-text">Find Your</p>
-
             <form class="search-wrapper" id="searchForm">
                 <input type="search" id="gameSearch" placeholder="Search games..." autocomplete="off">
                 <button type="submit" class="search-button">&#x1F50E;&#xFE0E;</button>
             </form>
-    
             <p class="search-text">Favourite Games</p>
         </section>
-        
+
+            <div class="result-filter">
+                <label class="filter-option">
+                    <input type="radio" name="store" class="filter-input" value="all" checked>
+                    All Stores
+                </label>
+                <label class="filter-option">
+                    <input type="radio" name="store" class="filter-input" value="steam">
+                    Steam Only
+                </label>
+            </div>
+
         <p id="clear-hint" class="empty-search"></p>
+
+
         <div id="results"></div>
 
         <main>

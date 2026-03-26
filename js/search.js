@@ -13,7 +13,7 @@
 
         
         // If input is empty, show hint to enter search term
-        if (value.length === 0) {
+        if (!value) {
         const hint = document.createElement('span');
         const p = document.createElement('p');
         p.className = 'empty-search';
@@ -24,9 +24,7 @@
     }
         //pushState for back button 
         history.pushState(null, '', '');
-        
-
-            
+          
         // If user has entered a search term, show hint to clear results and fade out hint after 3 seconds
         const hint = document.getElementById('clear-hint');
 
@@ -39,12 +37,34 @@
                 hint.classList.add("message-fade-out");
             }, 3000);
         
+            // Get the selected radio button value
+            let store = document.querySelector('input[name="store"]:checked').value;
 
-        // Fetch data from CheapShark API 
+        // Fetch data from CheapShark API and parse results. Show title, sale price, normal price, steam rating data (if available), and thumbnail for each result. 
         try {
             const data = await (await fetch(`https://www.cheapshark.com/api/1.0/deals?title=${value}`)).json();
-            
-                data.slice(0,12).forEach(game => {
+
+                let option;
+
+                if (store === 'steam') {
+                    option = data.filter(game => game.steamAppID);
+                } else if (store === 'all') {
+                    option = data;
+                }
+
+                if (option.length === 0) {
+                    const noResults = document.createElement('span');
+                    const p = document.createElement('p');
+                    p.className = 'empty-search';
+                    p.textContent = "No results found. Try a different search term.";
+                    noResults.appendChild(p);
+                    results.appendChild(noResults);
+                    return;
+                }
+
+                // Limit results to 12 games.
+                option.slice(0,12).forEach(game => {
+                // Create a card for each game result
                 const card = document.createElement('div');
                 card.className = 'game-result';
 
@@ -88,10 +108,16 @@
                 rating.className = 'steam-rating';
                 rating.textContent = steamRating;
 
-                // Link and thumbnail img
+                // Link and thumbnail img for steam deals or all deals 
                 const link = document.createElement('a');
-                link.href = `https://www.cheapshark.com/redirect?dealID=${game.dealID}`;
+                if (store === 'steam') {
+                 link.href = `https://store.steampowered.com/app/${game.steamAppID}`;
+                }
+                else if  (store === 'all') {
+                 link.href = `https://www.cheapshark.com/redirect?dealID=${game.dealID}`;
+                }
                 link.target = '_blank';
+            
 
                 const img = document.createElement('img');
                 img.src = game.thumb;
@@ -107,10 +133,12 @@
                 // Show results
                 results.appendChild(card);
 
+
             });
 
         } catch (err) {
             console.error(err);
+            results.textContent = "An error occurred while fetching data. Please try again later.";
         }
     });
 

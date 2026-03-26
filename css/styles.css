@@ -11,10 +11,11 @@ html {
 
 body {
     font-family: 'Orbitron', Verdana, sans-serif;
-    background-color: lightgrey;
+    background-image: url(../images/LMBG.jpg);
+    background-size: cover;
+    background-attachment: fixed;
     color: #000;
-    transition: background 0.3s ease, 
-    color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 html, body {
@@ -22,10 +23,9 @@ html, body {
 }
 
 .dark-mode {
-    background-color: black;
+    background-image: url(../images/DMBG.jpg);
     color: #fff;
-    transition: background 0.3s ease, 
-    color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* ===== HEADER ===== */
@@ -75,7 +75,8 @@ header {
     align-items: center;
     gap: 2em;
     font-size: 25px;
-    background-color: darkgray;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background-size: cover;
     padding: 0.5em 1em;
     margin-top: 3em;
     border-radius: 20px;
@@ -84,26 +85,25 @@ header {
 .navbar a {
     text-decoration: none;
     color: #000;
+    font-size: 20px;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border-radius: 8px;
+    padding: 0.5em;
 }
 
 .navbar a:hover {
-    color: #e48520;
+    color: #fff;
     background-color: #000;
-    transform: scale(1.05);
+    transform: scale(1.10);
     border-radius: 8px;
 }
 
-.dark-mode .navbar {
-    background-color: #333;
-}
 
 .dark-mode .navbar a {
     color: #fff;
 }
 
 .dark-mode .navbar a:hover {
-    color: blue;
     background-color: #000;
 }
 
@@ -116,7 +116,6 @@ header {
     gap: 10px;
     margin: 1em 0;
     padding: 0.5em;
-    background-image: url(../images/bannerLM.jpg);
     background-size: cover;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     border-radius: 4px;
@@ -178,13 +177,8 @@ header {
         font-family: 'Orbitron', sans-serif;
     }
 
-.dark-mode ::placeholder:hover {
-        color: #fff;
-        opacity: 1;
-    }
 
 .dark-mode #search-section {
-    background-image: url(../images/bannerDM.jpg);
     background-size: cover;
     color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
@@ -208,7 +202,7 @@ header {
 }
 
 .search-button {
-    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
     padding: 0.5em;
     margin: 0.5em;
     background: darkgray;
@@ -221,8 +215,9 @@ header {
 }
 
 .search-button:hover {
-    background: #000;
-    color: #e48520;
+    background: lightgray;
+    color: #000;
+    transform: scale(1.2);
 }
 
 .dark-mode .search-button {
@@ -232,7 +227,6 @@ header {
 
 .dark-mode .search-button:hover {
     background: #000;
-    color: blue;
 }
 
 .empty-search {
@@ -269,6 +263,47 @@ header {
     align-items: center;
     width: 350px;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.result-filter {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-size: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    gap: 1em;
+    background-size: cover;
+}
+
+.filter-input {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.filter-option {
+    padding: 0.5em;
+    color: #111;
+    font-size: 25px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-radius: 8px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.filter-option:hover {
+    background-color: #000;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.dark-mode .filter-option {
+    color: #fff;
+}
+
+.dark-mode .result-filter {
+    color: #fff;
 }
 
 .game-result p, .game-result h3 {
@@ -475,21 +510,22 @@ p{
     margin: 1em;
     padding: 0.5em;
     border-radius: 8px;
-    background-image: url(../images/bannerLM.jpg);
     background-size: cover;
+    background-color: #e48520;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transition: background-image 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
     border: none;
 }
 
 #genre-filter:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background-color: #000;
+    color: #fff;
     transform: scale(1.15);
 }
 
 #genre-filter option {
-    background-color: #d07410;
-    color: #111;
+    
     font-size: 30px;
     font-style: italic;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -501,13 +537,17 @@ p{
 }
 
 .dark-mode #genre-filter {
-    background-image: url(../images/bannerDM.jpg);
-    background-size: cover;
+    background-color: blue;
+    color: #fff;
+}
+
+.dark-mode #genre-filter:hover {
+    background-color: #000;
     color: #fff;
 }
 
 .dark-mode #genre-filter option {
-    background-color: #0000d1;
+    background-color: #000;
     color: #fff;
 }
 
@@ -635,7 +675,6 @@ span{
     max-width: 100%;
     margin: 2em;
     padding: 2em;
-    background-color: darkgray;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
@@ -646,7 +685,6 @@ span{
 }
 
 .dark-mode .user-form {
-    background-color: #333;
     color: #fff;
 }
 
@@ -664,6 +702,12 @@ span{
     margin-bottom: 1em;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: lightgray;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.user-form input:hover {
+    background-color: #fff;
 }
 
 .user-form button {
@@ -676,7 +720,7 @@ span{
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     font-weight: bold;
     font-style: oblique;
 
@@ -732,6 +776,7 @@ span{
     margin-bottom: 1em;
     font-weight: bold;
     font-style: oblique;
+    filter: brightness(2);
 }
 
 
