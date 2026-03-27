@@ -406,6 +406,7 @@ header {
 .active-scale {
 	transform: scale(1.2);
 	opacity: 1;
+}
 
 .slide:hover img {
     filter: brightness(0.7);
