@@ -446,6 +446,22 @@ p{
     border-bottom: 3px solid blue;
 }
 
+#cs2-link:target {
+	transform: scale(1.2);
+}
+
+#skyrim-link:target {
+	transform: scale(1.2);
+}
+
+#re2-link:target {
+	transform: scale(1.2);
+}
+
+#terraria-link:target {
+	transform: scale(1.2);
+}
+
 /* ===== CAROUSEL NAV BUTTONS ===== */
 .navigation-buttons .previous,
 .navigation-buttons .next {
