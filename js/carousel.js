@@ -34,14 +34,17 @@ window.addEventListener("load", () => {
 
     }
 
-    //add the active class to the current slide and dots
+    // Add the active class to the current slide and dots
     slides[currentIndex].classList.add("active");
     dots[currentIndex].classList.add("active");
 
-  
+  // Add the active-scale class to the current image
   const currentImg = slides[currentIndex].querySelector("img");
-if (currentImg)
+if (currentImg) setTimeout(() => {
     currentImg.classList.add("active-scale");
+  
+}, 150);
+}
     // Update the slide description based on the current slide
     const description = document.getElementById("slide-description");
     description.textContent = slides[currentIndex].querySelector(".image-text p").textContent;
