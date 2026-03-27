@@ -6,11 +6,15 @@
     const emailInput = document.getElementById("email");
     const message = document.getElementById("form-message");
 
+const button = document.getElementById('submit-button');
+
     // regex patterns for validation
     const namePattern = /^[A-Za-z\s]{2,50}$/;
     const validateEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     form.addEventListener("submit", (e) => {
+
+button.disabled = true;
 
         // clear any previous message
         message.textContent = "";
@@ -40,6 +44,7 @@
 
             setTimeout(() => {
                 message.textContent = "";
+                button.disabled = false;
             }, 4000);
 
             
@@ -60,6 +65,7 @@
 
             setTimeout(() => {
                 message.textContent = "";
+                button.disabled = false;
             }, 4000);
         }
     });
