@@ -22,34 +22,32 @@ window.addEventListener("load", () => {
   // function to update what slide is visible and using .active class to show which dot is active with opacity and position changes in CSS
   const updateCarousel = () => {
 
-    //remove active class from all slides and dots
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].classList.remove("active");
-      dots[i].classList.remove("active");
+  // remove active class + scale from all
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+    dots[i].classList.remove("active");
 
-      const img = slides[i].querySelector("img");
-      if(img)
-      img.classList.remove("active-scale");
-    }
+    const img = slides[i].querySelector("img");
+    if (img) img.classList.remove("active-scale");
+  }
 
-    }
+  // add active class to current
+  slides[currentIndex].classList.add("active");
+  dots[currentIndex].classList.add("active");
 
-    // Add the active class to the current slide and dots
-    slides[currentIndex].classList.add("active");
-    dots[currentIndex].classList.add("active");
-
-  // Add the active-scale class to the current image
+  // scale current image (with delay)
   const currentImg = slides[currentIndex].querySelector("img");
-if (currentImg) setTimeout(() => {
-    currentImg.classList.add("active-scale");
-  
-}, 150);
-}
-    // Update the slide description based on the current slide
-    const description = document.getElementById("slide-description");
-    description.textContent = slides[currentIndex].querySelector(".image-text p").textContent;
-    
-  };
+  if (currentImg) {
+    setTimeout(() => {
+      currentImg.classList.add("active-scale");
+    }, 150);
+  }
+
+  // update description
+  const description = document.getElementById("slide-description");
+  description.textContent =
+    slides[currentIndex].querySelector(".image-text p").textContent;
+};
 
 
   // NEXT BUTTON
