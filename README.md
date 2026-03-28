@@ -26,11 +26,12 @@ Created as part of a college assignment to demonstrate front-end development, Ja
 * Auto-rotating genre carousel with manual navigation, pause-on-hover, and smooth fade transitions
 * Genre filter dropdown allowing users to display all genres or a single genre of their choice
 * Four curated genre sections with game info, images, and Steam store links
+* Carousel-to-genre interaction where clicking a carousel image scrolls to the corresponding section and highlights the related genre card with a smooth scale animation using JavaScript and dynamic class manipulation
 * Game deal search using the CheapShark REST API, fetching the top 12 results with sale price, normal price, and Steam rating displayed on interactive result cards
 * Store filter radio buttons to switch between all store deals or Steam only results
 * Dark mode toggle with persistent state via `localStorage`
 * Newsletter signup form with regex validation, shake animation, and fade-out feedback messages
-* Fully responsive design for mobile, tablet, and desktop
+* Responsive design across mobile, tablet, and desktop using media queries and layout adjustments
 * Smooth scrolling navigation between sections
 * PWA support via web app manifest (installable on mobile home screen)
 * Open Graph and social sharing meta tags for better link previews

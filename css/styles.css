@@ -399,17 +399,12 @@ header {
     width: 100%;
     height: auto;
     object-fit: cover;
-    transition: filter 0.3s ease-in-out, transform 0.4s ease-in-out;
-	opacity: 0.9;
+    transition: filter 0.3s ease-in-out;
 }
 
-.active-scale {
-	transform: scale(1.2);
-	opacity: 1;
-}
 
 .slide:hover img {
-    filter: brightness(0.7);
+    filter: brightness(0.6);
 }
 
 /* Text overlaid on image */
@@ -452,21 +447,7 @@ p{
     border-bottom: 3px solid blue;
 }
 
-#cs2-link:target {
-	transform: scale(1.2);
-}
 
-#skyrim-link:target {
-	transform: scale(1.2);
-}
-
-#re2-link:target {
-	transform: scale(1.2);
-}
-
-#terraria-link:target {
-	transform: scale(1.2);
-}
 
 /* ===== CAROUSEL NAV BUTTONS ===== */
 .navigation-buttons .previous,
@@ -594,6 +575,13 @@ p{
     padding: 0.5em;
     overflow: hidden;
     margin-bottom: 2em;
+    transition: transform 0.4s ease-in-out;
+}
+
+.genre-card.active-scale {
+    transform: scale(0.8);
+    filter: brightness(0.7);
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
 }
 
 .dark-mode .genre-card {
@@ -664,9 +652,13 @@ span{
 }
 
 .genre-image:hover {
-    filter: brightness(0.5) 
-    grayscale(100%);
+    filter: brightness(0.5) grayscale(100%);
     transform: scale(1.05);
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.genre-image.disable-hover {
+    pointer-events: none;
 }
 
 .genre-image {

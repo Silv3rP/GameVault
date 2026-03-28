@@ -26,22 +26,12 @@ window.addEventListener("load", () => {
   for (let i = 0; i < slides.length; i++) {
     slides[i].classList.remove("active");
     dots[i].classList.remove("active");
-
-    const img = slides[i].querySelector("img");
-    if (img) img.classList.remove("active-scale");
   }
 
   // add active class to current
   slides[currentIndex].classList.add("active");
   dots[currentIndex].classList.add("active");
 
-  // scale current image (with delay)
-  const currentImg = slides[currentIndex].querySelector("img");
-  if (currentImg) {
-    setTimeout(() => {
-      currentImg.classList.add("active-scale");
-    }, 150);
-  }
 
   // update description
   const description = document.getElementById("slide-description");
@@ -86,19 +76,59 @@ window.addEventListener("load", () => {
   });
 
 
-  // DOT NAVIGATION
-  dots.forEach((dot, index) => {
+      // DOT NAVIGATION
+      dots.forEach((dot, index) => {
 
-    // when a dot is clicked
-    dot.addEventListener("click", () => {
+        // when a dot is clicked
+        dot.addEventListener("click", () => {
 
-      // change slide to the dot's position
-      currentIndex = index;
+          // change slide to the dot's position
+          currentIndex = index;
 
-      updateCarousel();
-    });
+          updateCarousel();
+        });
 
-  });
+      });
+
+      // IMAGE LINK NAVIGATION
+      const imageLinks = carousel.querySelectorAll(".slide a");
+
+        // Click event listener for each image link in the carousel
+        imageLinks.forEach((link, index) => {
+        link.addEventListener("click", () => {
+          
+          // Sync the carousel to the clicked image's slide
+          currentIndex = index;
+          updateCarousel();
+        
+          // Get the ID of the target genre card from the link's href attribute '#game-link'
+          const imgID = link.getAttribute("href");
+          const linkCard = document.querySelector(imgID);
+
+          // Stop if link ID is not found
+          if (!linkCard) return;
+          
+          // Remove active-scale from all genre cards to reset any previous animations
+          document.querySelectorAll(".genre-card").forEach(card => {
+            card.classList.remove("active-scale");
+          });
+
+              const genreImage = linkCard.querySelector(".genre-image");
+
+              // Add active-scale class to the target genre card to trigger the animation and apply brightness filter while removing normal hover effects
+              setTimeout(() => {
+              linkCard.classList.add("active-scale");
+              genreImage.classList.add("disable-hover");
+
+              // Remove the active-scale class and set the filter to none and re-enable hover effects
+              setTimeout(() => {
+              linkCard.classList.remove("active-scale");
+              genreImage.classList.remove("disable-hover");
+              }, 500);   
+            }, 1500);  
+         });
+      });
+
 
 
   // show the first slide when page loads
