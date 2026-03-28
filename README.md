@@ -29,6 +29,7 @@ Created as part of a college assignment to demonstrate front-end development, Ja
 * Carousel-to-genre interaction where clicking a carousel image scrolls to the corresponding section and highlights the related genre card with a smooth scale animation using JavaScript and dynamic class manipulation
 * Game deal search using the CheapShark REST API, fetching the top 12 results with sale price, normal price, and Steam rating displayed on interactive result cards
 * Store filter radio buttons to switch between all store deals or Steam only results
+* Browser history integration using the History API, allowing users to navigate back to clear search results and carousel-genre interactions
 * Dark mode toggle with persistent state via `localStorage`
 * Newsletter signup form with regex validation, shake animation, and fade-out feedback messages
 * Responsive design across mobile, tablet, and desktop using media queries and layout adjustments
