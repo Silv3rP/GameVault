@@ -88,74 +88,130 @@ window.addEventListener("load", () => {
           updateCarousel();
         });
 
+      });(function() {
+  window.addEventListener("load", () => {
+
+    // Get carousel and its elements
+    const carousel = document.querySelector(".component-carousel");
+    const slides = carousel.getElementsByClassName("slide");
+    const dots = carousel.querySelectorAll(".navigation-dot");
+    const nextBtn = carousel.querySelector(".next");
+    const prevBtn = carousel.querySelector(".previous");
+
+    // Track current slide index
+    let currentIndex = 0;
+
+    // Update which slide and dot are active
+    const updateCarousel = () => {
+
+      // Remove active class from all slides
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+
+      // Remove active class from all dots
+      dots.forEach(dot => dot.classList.remove("active"));
+
+      // Add active class to current slide
+      slides[currentIndex].classList.add("active");
+
+      // Highlight the correct dot based on genre group (3 slides per genre)
+      const dotIndex = Math.floor(currentIndex / 3);
+      dots[dotIndex].classList.add("active");
+
+      // Update the description text below the carousel
+      const description = document.getElementById("slide-description");
+      description.textContent =
+        slides[currentIndex].querySelector(".image-text p").textContent;
+    };
+
+
+    // NEXT BUTTON - move forward one slide
+    nextBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentIndex++;
+      if (currentIndex >= slides.length) currentIndex = 0;
+      updateCarousel();
+    });
+
+
+    // PREVIOUS BUTTON - move back one slide
+    prevBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentIndex--;
+      if (currentIndex < 0) currentIndex = slides.length - 1;
+      updateCarousel();
+    });
+
+
+    // DOT NAVIGATION - clicking a dot jumps to the first slide of that genre
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        currentIndex = index * 3;
+        updateCarousel();
       });
+    });
 
-      // IMAGE LINK NAVIGATION
-      const imageLinks = carousel.querySelectorAll(".slide a");
 
-        // Click event listener for each image link in the carousel
-        imageLinks.forEach((link, index) => {
-        link.addEventListener("click", () => {
-          
-          // Sync the carousel to the clicked image's slide
-          currentIndex = index;
-          updateCarousel();
-        
-          // Get the ID of the target genre card from the link's href attribute '#game-link'
-          const imgID = link.getAttribute("href");
-          const linkCard = document.querySelector(imgID);
+    // IMAGE LINK NAVIGATION - clicking a carousel image scrolls to the corresponding genre card
+    const imageLinks = carousel.querySelectorAll(".slide a");
 
-          // Stop if link ID is not found
-          if (!linkCard) return;
-          
-          // Remove active-scale from all genre cards to reset any previous animations
-          document.querySelectorAll(".genre-card").forEach(card => {
-            card.classList.remove("active-scale");
-          });
+    imageLinks.forEach((link, index) => {
+      link.addEventListener("click", () => {
 
-              const genreImage = linkCard.querySelector(".genre-image");
+        // Sync carousel to clicked slide
+        currentIndex = index;
+        updateCarousel();
 
-              // Add active-scale class to the target genre card to trigger the animation and apply brightness filter while removing normal hover effects
-              setTimeout(() => {
-              linkCard.classList.add("active-scale");
-              genreImage.classList.add("disable-hover");
+        // Get the target genre card from the link href
+        const imgID = link.getAttribute("href");
+        const linkCard = document.querySelector(imgID);
 
-              // Remove the active-scale class and set the filter to none and re-enable hover effects
-              setTimeout(() => {
-              linkCard.classList.remove("active-scale");
-              genreImage.classList.remove("disable-hover");
-              }, 500);   
-            }, 1500);  
-         });
+        if (!linkCard) return;
+
+        // Remove active-scale from all genre cards to reset previous animations
+        document.querySelectorAll(".genre-card").forEach(card => {
+          card.classList.remove("active-scale");
+        });
+
+        const genreImage = linkCard.querySelector(".genre-image");
+
+        // Add active-scale to target card after scroll delay, then remove it
+        setTimeout(() => {
+          linkCard.classList.add("active-scale");
+          genreImage.classList.add("disable-hover");
+
+          setTimeout(() => {
+            linkCard.classList.remove("active-scale");
+            genreImage.classList.remove("disable-hover");
+          }, 500);
+        }, 1500);
       });
+    });
 
 
-
-  // show the first slide when page loads
-  updateCarousel();
-
-  // AUTO-ROTATE CAROUSEL (every 5 seconds) and pause on hover
-let timer = setInterval(() => {
-    currentIndex++;
-    if (currentIndex >= slides.length) {
-      currentIndex = 0;
-    }
+    // Show first slide on page load
     updateCarousel();
-  }, 5000);
 
-  //fixed the issue of the timer not pausing when hovering over the carousel by adding event listeners to the slider container class instead of the entire carousel. 
-  const sliderContainer = carousel.querySelector(".slider-container");
-
-  //clearInterval(timer) stops the timer, and setInterval starts it again when mouse leaves the carousel
-  sliderContainer.addEventListener("mouseenter", () => clearInterval(timer));
-  sliderContainer.addEventListener("mouseleave", () => {
-    timer = setInterval(() => {
+    // AUTO-ROTATE - advance one slide every 5 seconds
+    let timer = setInterval(() => {
       currentIndex++;
       if (currentIndex >= slides.length) currentIndex = 0;
       updateCarousel();
     }, 5000);
-  });
 
-});
+    // PAUSE ON HOVER - stop auto-rotate when mouse enters, restart when it leaves
+    const sliderContainer = carousel.querySelector(".slider-container");
+
+    sliderContainer.addEventListener("mouseenter", () => clearInterval(timer));
+    sliderContainer.addEventListener("mouseleave", () => {
+      timer = setInterval(() => {
+        currentIndex++;
+        if (currentIndex >= slides.length) currentIndex = 0;
+        updateCarousel();
+      }, 5000);
+    });
+
+  });
 
 })();
