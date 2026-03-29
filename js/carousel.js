@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
   // remove active class + scale from all
   for (let i = 0; i < slides.length; i++) {
     slides[i].classList.remove("active");
-    dots[i].classList.remove("active");
+    dots.forEach(dot => dot.classList.remove("active"));
   }
 
   // add active class to current
