@@ -1,147 +1,108 @@
 (function() {
-// run the code after the page loads
-window.addEventListener("load", () => {
+  window.addEventListener("load", () => {
 
-  // get the carousel container
-  const carousel = document.querySelector(".component-carousel");
+    // Get carousel elements
+    const carousel = document.querySelector(".component-carousel");
+    const slides = carousel.getElementsByClassName("slide");
+    const dots = carousel.querySelectorAll(".navigation-dot");
+    const nextBtn = carousel.querySelector(".next");
+    const prevBtn = carousel.querySelector(".previous");
 
-  // get all slides (HTMLCollection)
-  const slides = carousel.getElementsByClassName("slide");
+    // Track current slide
+    let currentIndex = 0;
 
-  // get the navigation dots (NodeList)
-  const dots = carousel.querySelectorAll(".navigation-dot");
+    // Update visible slide and active dot
+    const updateCarousel = () => {
 
-  // get the next and previous buttons
-  const nextBtn = carousel.querySelector(".next");
-  const prevBtn = carousel.querySelector(".previous");
+      // Remove active from all slides
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
 
-  // keep track of which slide we are currently showing
-  let currentIndex = 0;
+      // Remove active from all dots
+      dots.forEach(dot => dot.classList.remove("active"));
 
+      // Set current slide as active
+      slides[currentIndex].classList.add("active");
 
-  // function to update what slide is visible and using .active class to show which dot is active with opacity and position changes in CSS
-  const updateCarousel = () => {
+      // Highlight dot for current genre group (3 slides per genre)
+      const dotIndex = Math.floor(currentIndex / 3);
+      dots[dotIndex].classList.add("active");
 
-  // remove active class + scale from all
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("active");
-    dots[i].classList.remove("active");
-  }
+      // Update description text below carousel
+      const description = document.getElementById("slide-description");
+      description.textContent =
+        slides[currentIndex].querySelector(".image-text p").textContent;
+    };
 
-  // add active class to current
-  slides[currentIndex].classList.add("active");
-  dots[currentIndex].classList.add("active");
+    // Next button - move forward one slide
+    nextBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentIndex++;
+      if (currentIndex >= slides.length) currentIndex = 0;
+      updateCarousel();
+    });
 
+    // Previous button - move back one slide
+    prevBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentIndex--;
+      if (currentIndex < 0) currentIndex = slides.length - 1;
+      updateCarousel();
+    });
 
-  // update description
-  const description = document.getElementById("slide-description");
-  description.textContent =
-    slides[currentIndex].querySelector(".image-text p").textContent;
-};
+    // Dot navigation - jump to first slide of that genre
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        currentIndex = index * 3;
+        updateCarousel();
+      });
+    });
 
+    // Image link navigation - scroll to genre card and trigger scale animation
+    const imageLinks = carousel.querySelectorAll(".slide a");
+    imageLinks.forEach((link, index) => {
+      link.addEventListener("click", () => {
 
-  // NEXT BUTTON
-  nextBtn.addEventListener("click", (e) => {
+        // Sync carousel to clicked slide
+        currentIndex = index;
+        updateCarousel();
 
-    // stop link behaviour
-    e.preventDefault();
+        // Get target genre card from link href
+        const imgID = link.getAttribute("href");
+        const linkCard = document.querySelector(imgID);
+        if (!linkCard) return;
 
-    // move forward one slide
-    currentIndex++;
-
-    // if we go past the last slide, go back to first
-    if (currentIndex >= slides.length) {
-      currentIndex = 0;
-    }
-
-    // update the carousel
-    updateCarousel();
-  });
-
-
-  // PREVIOUS BUTTON
-  prevBtn.addEventListener("click", (e) => {
-
-    e.preventDefault();
-
-    // move back one slide
-    currentIndex--;
-
-    // if we go before the first slide, go to the last
-    if (currentIndex < 0) {
-      currentIndex = slides.length - 1;
-    }
-
-    updateCarousel();
-  });
-
-
-      // DOT NAVIGATION
-      dots.forEach((dot, index) => {
-
-        // when a dot is clicked
-        dot.addEventListener("click", () => {
-
-          // change slide to the dot's position
-          currentIndex = index;
-
-          updateCarousel();
+        // Reset active-scale on all genre cards
+        document.querySelectorAll(".genre-card").forEach(card => {
+          card.classList.remove("active-scale");
         });
 
+        const genreImage = linkCard.querySelector(".genre-image");
+
+        // Add scale animation after scroll delay then remove it
+        setTimeout(() => {
+          linkCard.classList.add("active-scale");
+          genreImage.classList.add("disable-hover");
+          setTimeout(() => {
+            linkCard.classList.remove("active-scale");
+            genreImage.classList.remove("disable-hover");
+          }, 500);
+        }, 1500);
       });
+    });
 
-      // IMAGE LINK NAVIGATION
-      const imageLinks = carousel.querySelectorAll(".slide a");
+    // Show first slide on load
+    updateCarousel();
 
-        // Click event listener for each image link in the carousel
-        imageLinks.forEach((link, index) => {
-        link.addEventListener("click", () => {
-          
-          // Sync the carousel to the clicked image's slide
-          currentIndex = index;
-          updateCarousel();
-        
-          // Get the ID of the target genre card from the link's href attribute '#game-link'
-          const imgID = link.getAttribute("href");
-          const linkCard = document.querySelector(imgID);
-
-          // Stop if link ID is not found
-          if (!linkCard) return;
-          
-          // Remove active-scale from all genre cards to reset any previous animations
-          document.querySelectorAll(".genre-card").forEach(card => {
-            card.classList.remove("active-scale");
-          });
-
-              const genreImage = linkCard.querySelector(".genre-image");
-
-              // Add active-scale class to the target genre card to trigger the animation and apply brightness filter while removing normal hover effects
-              setTimeout(() => {
-              linkCard.classList.add("active-scale");
-              genreImage.classList.add("disable-hover");
-
-              // Remove the active-scale class and set the filter to none and re-enable hover effects
-              setTimeout(() => {
-              linkCard.classList.remove("active-scale");
-              genreImage.classList.remove("disable-hover");
-              }, 500);   
-            }, 1500);  
-         });
-      });
-
-
-
-  // show the first slide when page loads
-  updateCarousel();
-
-  // AUTO-ROTATE CAROUSEL (every 3 seconds) and pause on hover
+  // AUTO-ROTATE CAROUSEL (every 5 seconds) and pause on hover
 let timer = setInterval(() => {
     currentIndex++;
     if (currentIndex >= slides.length) {
       currentIndex = 0;
     }
     updateCarousel();
-  }, 3000);
+  }, 5000);
 
   //fixed the issue of the timer not pausing when hovering over the carousel by adding event listeners to the slider container class instead of the entire carousel. 
   const sliderContainer = carousel.querySelector(".slider-container");
@@ -153,9 +114,8 @@ let timer = setInterval(() => {
       currentIndex++;
       if (currentIndex >= slides.length) currentIndex = 0;
       updateCarousel();
-    }, 3000);
+    }, 5000);
   });
 
-});
-
+  });
 })();
