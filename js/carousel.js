@@ -134,14 +134,14 @@ window.addEventListener("load", () => {
   // show the first slide when page loads
   updateCarousel();
 
-  // AUTO-ROTATE CAROUSEL (every 5 seconds) and pause on hover
+  // AUTO-ROTATE CAROUSEL (every 3 seconds) and pause on hover
 let timer = setInterval(() => {
     currentIndex++;
     if (currentIndex >= slides.length) {
       currentIndex = 0;
     }
     updateCarousel();
-  }, 5000);
+  }, 3000);
 
   //fixed the issue of the timer not pausing when hovering over the carousel by adding event listeners to the slider container class instead of the entire carousel. 
   const sliderContainer = carousel.querySelector(".slider-container");
@@ -153,7 +153,7 @@ let timer = setInterval(() => {
       currentIndex++;
       if (currentIndex >= slides.length) currentIndex = 0;
       updateCarousel();
-    }, 5000);
+    }, 3000);
   });
 
 });
