@@ -1,10 +1,16 @@
 # GameVault – Video Game Genre Encyclopedia
 
-**GitHub Repository:** https://github.com/ColmN-Dev/GameVault
+**GitHub Repository:**
 
-**Public URL:** https://colmn-dev.github.io/GameVault/
+https://github.com/ColmN-Dev/GameVault
 
-**Vercel:** https://game-vault-cnd.vercel.app/
+**Public URL:** 
+
+https://colmn-dev.github.io/GameVault/
+
+**Vercel:** 
+
+https://game-vault-cnd.vercel.app/
 
 ---
 
