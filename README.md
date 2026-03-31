@@ -1,16 +1,10 @@
 # GameVault – Video Game Genre Encyclopedia
 
-A single-page application built with HTML, CSS, and JavaScript. GameVault is a video game encyclopedia highlighting four genres — Shooter, RPG, Horror, and Indie — each featuring three curated games, with additional game deal search functionality powered by the CheapShark REST API.
+**GitHub Repository:** https://github.com/ColmN-Dev/GameVault
 
-Created as part of a college assignment to demonstrate front-end development, JavaScript interactivity, and DOM manipulation.
+**Public URL:** https://colmn-dev.github.io/GameVault/
 
-🔗 Live site: 
-
-https://colmn-dev.github.io/GameVault/
-
-🔗 Vercel: 
-
-https://game-vault-cnd.vercel.app/
+**Vercel:** https://game-vault-cnd.vercel.app/
 
 ---
 
@@ -56,7 +50,9 @@ I chose a dark-themed gaming aesthetic with an orange and blue colour scheme —
 
 ## Wireframes
 
-I sketched a wireframe at the start of the project to plan the layout and structure before building anything. See `planning.md` in the repository for wireframe.
+I created wireframes at the start of the project to plan the layout and structure before building anything.
+
+![GameVault Wireframe](images/wireframe.png)
 
 ---
 
@@ -75,6 +71,12 @@ I sketched a wireframe at the start of the project to plan the layout and struct
 | Steam filter tested with and without results | Pass |
 | Carousel auto-rotation and manual navigation tested | Pass |
 | Back button behaviour tested on mobile | Pass |
+
+### Biome Lint Output
+
+```bash
+PASTE YOUR BIOME OUTPUT HERE
+```
 
 ---
 
