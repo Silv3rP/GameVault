@@ -745,7 +745,7 @@ span{
 
 }
 
-#newsletter .dark-mode .user-form button {
+.dark-mode #newsletter .user-form button {
     background-color: blue;
     color: #fff;
 }
@@ -755,7 +755,7 @@ span{
     transform: scale(1.05);
 }
 
-#newsletter .dark-mode .user-form button:hover {
+.dark-mode #newsletter .user-form button:hover {
     background: #0000d1;
     transform: scale(1.05);
 }
