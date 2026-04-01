@@ -64,14 +64,19 @@ I created wireframes at the start of the project to plan the layout and structur
 
 ## Testing
 
-A comprehensive set of tests was conducted, including Lighthouse for accessibility, performance, and SEO, all scoring 100 except for a slight dip in performance. Additional testing covered responsive design across devices, dark mode, form validation, CheapShark API, theme filter, carousel behavior, and back button. Initial Biome linting found five errors and 12 warnings, which were all resolved in the final pass, ensuring clean code.
+A comprehensive set of tests was conducted, including Lighthouse for accessibility, performance, and SEO. All tests were run in **incognito mode** for accurate, cache-free results.
+
+### Lighthouse Results (incognito mode)
+
+| Hosting        | Performance | Accessibility | Best Practices | SEO |
+|----------------|-------------|---------------|----------------|-----|
+| GitHub Pages   | 100         | 100           | 100            | 100 |
+| Vercel         | 99          | 100           | 100            | 100 |
+
+### Additional Testing
 
 | Test | Result |
 |------|--------|
-| Lighthouse Performance | 91 |
-| Lighthouse Accessibility | 100 |
-| Lighthouse Best Practices | 100 |
-| Lighthouse SEO | 100 |
 | Responsive design tested across mobile, tablet, laptop, and desktop | Pass |
 | Dark mode tested across all elements | Pass |
 | Form validation tested with valid and invalid inputs | Pass |
@@ -79,6 +84,8 @@ A comprehensive set of tests was conducted, including Lighthouse for accessibili
 | Steam filter tested with and without results | Pass |
 | Carousel auto-rotation and manual navigation tested | Pass |
 | Back button behaviour tested on mobile | Pass |
+
+Initial Biome linting found five errors and 12 warnings, which were all resolved in the final pass, ensuring clean code.
 
 ### Biome Linting Output
 
@@ -93,18 +100,17 @@ Checked 8 files in 35ms. No fixes applied.
 
 ## Issues
 
-| Title | Severity | Description |
-|-------|----------|-------------|
-| Performance score | Low | My Lighthouse performance score dropped from 100 to 91 after adding full-page background images and twelve carousel images. The images are compressed but further optimisation could improve this. |
+| Title              | Severity | Description |
+|--------------------|----------|-------------|
+| Performance score  | Low      | Lighthouse Performance varies slightly between hosts (100 on GitHub Pages, 99 on Vercel) due to different CDN configurations. All other categories score 100. |
 
 ---
 
 ## Future Work
 
-* Image optimisation refinements to improve Lighthouse performance score
 * Additional keyboard navigation and ARIA labels for better accessibility
 * Potential OOP refactor using JavaScript classes to improve code maintainability
-* Pagination or show more functionality for search results
+* Pagination or "show more" functionality for search results
 
 ---
 
@@ -121,3 +127,5 @@ Colm Nolan / ColmN-Dev
 
 ## Webpage Preview – Dark Mode
 ![GameVault Homepage Dark Mode](images/GVDMSS.png)
+
+---
