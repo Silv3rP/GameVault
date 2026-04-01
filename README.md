@@ -73,7 +73,7 @@ The application uses a gaming-focused aesthetic with an orange (light mode) and 
 
 The carousel was designed to display all twelve games, grouped into four categories with navigation dots representing each genre rather than individual slides. This keeps the interface clean while maintaining usability.
 
-Additional filters were implemented to give users more control over what content is displayed. Full development details are documented in `documentation.md`.
+Additional filters were implemented to give users more control over what content is displayed. Full development details are documented in `Documentation.md`.
 
 ---
 
