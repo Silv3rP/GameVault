@@ -80,16 +80,12 @@ A comprehensive set of tests was conducted, including Lighthouse for accessibili
 | Carousel auto-rotation and manual navigation tested | Pass |
 | Back button behaviour tested on mobile | Pass |
 
-### Biome Lint Output
+### Biome Linting Output
 
 ```
-COLOMBO@COLOMBO MINGW64 ~/OneDrive/Full-Stack-Software-Development/Assignment2-Javascript/GameVault (main)
+
 $ npx @biomejs/biome lint --max-diagnostics 100
 Checked 8 files in 35ms. No fixes applied.
-
-COLOMBO@COLOMBO MINGW64 ~/OneDrive/Full-Stack-Software-Development/Assignment2-Javascript/GameVault (main)
-$
-
 
 ```
 
@@ -99,15 +95,15 @@ $
 
 | Title | Severity | Description |
 |-------|----------|-------------|
-| Performance score | Low | My Lighthouse performance score dropped from 100 to 91 after adding full page background images and twelve carousel images. The images are compressed but further optimisation could improve this. |
+| Performance score | Low | My Lighthouse performance score dropped from 100 to 91 after adding full-page background images and twelve carousel images. The images are compressed but further optimisation could improve this. |
 
 ---
 
 ## Future Work
 
-* Further image optimisation to improve the Lighthouse performance score
-* Additional keyboard navigation for full accessibility
-* Potential OOP refactor using JavaScript classes for the carousel and search components
+* Image optimisation refinements to improve Lighthouse performance score
+* Additional keyboard navigation and ARIA labels for better accessibility
+* Potential OOP refactor using JavaScript classes to improve code maintainability
 * Pagination or show more functionality for search results
 
 ---
