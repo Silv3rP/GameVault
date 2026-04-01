@@ -110,9 +110,9 @@ Colm Nolan / ColmN-Dev
 ---
 
 ## Webpage Preview – Light Mode
-![GameVault Homepage Light Mode](images/GVLM.png)
+![GameVault Homepage Light Mode](images/GVLMSS.png)
 
 ---
 
 ## Webpage Preview – Dark Mode
-![GameVault Homepage Dark Mode](images/GVDM.png)
+![GameVault Homepage Dark Mode](images/GVDMSS.png)
