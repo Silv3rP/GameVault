@@ -4,11 +4,11 @@
 
 https://github.com/ColmN-Dev/GameVault
 
-**Public URL:** 
+**Public URL:**
 
 https://colmn-dev.github.io/GameVault/
 
-**Vercel:** 
+**Vercel:**
 
 https://game-vault-cnd.vercel.app/
 
@@ -16,47 +16,70 @@ https://game-vault-cnd.vercel.app/
 
 ## Project Description/Concept
 
-GameVault is a video game genre encyclopedia I built as a single-page application. I wanted to create an interactive, visually engaging site that highlights four gaming genres I enjoy — Shooter, RPG, Horror, and Indie — each with three curated games I chose myself. Users can explore genres, search for game deals via the CheapShark REST API, and filter results by store. I also added dark mode, a genre filter dropdown, and a fully interactive carousel showcasing all twelve games.
+For this project, I built **GameVault**, a single-page application that showcases four curated video game genres — Shooter, RPG, Horror, and Indie — each featuring three selected games. 
+
+Users can explore genres, search for game deals using the CheapShark REST API, and filter results by store. The application also includes dark mode, a genre filter dropdown, and an interactive carousel displaying all twelve games.
 
 ---
 
 ## Features
 
-* Auto-rotating genre carousel with manual navigation, pause-on-hover, and smooth fade transitions
-* Genre filter dropdown allowing users to display all genres or a single genre of their choice
-* Four curated genre sections with game info, images, and links to their respective store pages
-* Carousel-to-genre interaction where clicking a carousel image scrolls to the corresponding section and highlights the related genre card with a smooth scale animation using JavaScript and dynamic class manipulation
-* Game deal search using the CheapShark REST API, fetching the top 12 results with sale price, normal price, and Steam rating displayed on interactive result cards
-* Store filter radio buttons to switch between all store deals or Steam only results
-* Dark mode toggle with persistent state via `localStorage`
-* Newsletter signup form with regex validation, shake animation, and fade-out feedback messages
-* Browser History API integration for back button support on search and carousel interactions
-* Fully responsive design for mobile, tablet, and desktop
-* Smooth scrolling navigation between sections
-* PWA support via web app manifest (installable on mobile home screen)
-* Open Graph and social sharing meta tags for better link previews
-* Favicon and Orbitron font for a consistent gaming aesthetic
-* Modular JavaScript structure with separate files: `dark-mode.js`, `carousel.js`, `form.js`, `filter.js`, and `search.js`
+* Auto-rotating genre carousel with manual navigation and pause-on-hover
+* Genre filter dropdown to display all or selected genres
+* Four curated genre sections with game information and store links
+* Carousel interaction that scrolls to and highlights corresponding genre sections
+* Game deal search using the CheapShark REST API (top 12 results displayed)
+* Store filter to toggle between all stores and Steam results
+* Dark mode toggle with persistent state
+* Newsletter signup form with validation and feedback messages
+* Browser History API support for navigation
+* Fully responsive design across mobile, tablet, and desktop
+* Smooth scrolling navigation
+* PWA support via web app manifest
+* Open Graph meta tags for social sharing
+* Modular JavaScript structure (`dark-mode.js`, `carousel.js`, `form.js`, `filter.js`, `search.js`)
 
 ---
 
 ## Tech Stack
 
-* **HTML** – semantic single-page structure
-* **CSS** – layout, styling, responsive design, and dark mode
-* **JavaScript** – interactivity, DOM manipulation, and REST API integration
+* **HTML** – semantic structure  
+* **CSS** – layout, styling, responsiveness, dark mode  
+* **JavaScript** – interactivity, DOM manipulation, API integration  
+
+---
+
+## Role of JavaScript
+
+JavaScript is what makes the site actually interactive rather than just a static layout. It handles user input, updates content dynamically, and controls features like the carousel, filters, and search results.
+
+---
+
+## JavaScript Interactivity
+
+JavaScript is used throughout the project to add dynamic functionality, including:
+
+- DOM manipulation to update search results and show/hide genre sections  
+- Event handling for clicks, form submission, dropdown changes, and hover interactions  
+- API integration using `fetch()` and `async/await` to retrieve game deals  
+- Timers (`setInterval`, `setTimeout`) to control carousel behaviour and animations  
+- Form validation with real-time feedback messages  
 
 ---
 
 ## Design Decisions
 
-I chose a dark-themed gaming aesthetic with an orange and blue colour scheme — orange for light mode and blue for dark mode. I used the Orbitron font for its pixel-art gaming feel. I used space banner images as the genre card backgrounds in both themes and added full page background images that correspond to each mode. I expanded the carousel to showcase all twelve games, using four navigation dots representing each genre group rather than twelve individual dots to keep the UI clean. I added the genre filter and store filter to give users control over what content they see. Full design decisions, development process, challenges faced, and JavaScript interactivity details are in `documentation.md`.
+The application uses a gaming-focused aesthetic with an orange (light mode) and blue (dark mode) colour scheme. The Orbitron font was chosen for its arcade-style appearance. Space-themed banner images are used for genre cards, with different background images for light and dark modes.
+
+The carousel was designed to display all twelve games, grouped into four categories with navigation dots representing each genre rather than individual slides. This keeps the interface clean while maintaining usability.
+
+Additional filters were implemented to give users more control over what content is displayed. Full development details are documented in `documentation.md`.
 
 ---
 
 ## Wireframes
 
-I created wireframes at the start of the project to plan the layout and structure before building anything.
+Wireframes were created at the start of development to plan layout and structure.
 
 ![GameVault Wireframe](images/gamevault_wireframe.png)
 
@@ -64,7 +87,7 @@ I created wireframes at the start of the project to plan the layout and structur
 
 ## Testing
 
-A comprehensive set of tests was conducted, including Lighthouse for accessibility, performance, and SEO. All tests were run in **incognito mode** for accurate, cache-free results.
+A comprehensive set of tests was conducted, including Lighthouse audits for performance, accessibility, best practices, and SEO. All tests were run in **incognito mode** to ensure accurate, cache-free results.
 
 ### Lighthouse Results (incognito mode)
 
@@ -73,21 +96,25 @@ A comprehensive set of tests was conducted, including Lighthouse for accessibili
 | GitHub Pages   | 100         | 100           | 100            | 100 |
 | Vercel         | 99          | 100           | 100            | 100 |
 
+Earlier performance issues (score of 91) were improved through image optimisation.
+
 ### Additional Testing
 
 | Test | Result |
 |------|--------|
-| Responsive design tested across mobile, tablet, laptop, and desktop | Pass |
-| Dark mode tested across all elements | Pass |
-| Form validation tested with valid and invalid inputs | Pass |
-| CheapShark API tested with valid search terms and empty input | Pass |
-| Steam filter tested with and without results | Pass |
-| Carousel auto-rotation and manual navigation tested | Pass |
-| Back button behaviour tested on mobile | Pass |
+| Responsive design across mobile, tablet, laptop, desktop | Pass |
+| Dark mode across all elements | Pass |
+| Form validation (valid and invalid inputs) | Pass |
+| CheapShark API search (valid and empty input) | Pass |
+| Store filter functionality | Pass |
+| Carousel auto-rotation and manual navigation | Pass |
+| Back button behaviour (mobile) | Pass |
 
-Initial Biome linting found five errors and 12 warnings, which were all resolved in the final pass, ensuring clean code.
+Initial Biome linting reported 5 errors and 12 warnings. All issues were resolved.
 
 ### Biome Linting Output
+
+Final linting run after resolving all issues:
 
 ```
 
@@ -96,21 +123,23 @@ Checked 8 files in 35ms. No fixes applied.
 
 ```
 
+
 ---
 
 ## Issues
 
-| Title              | Severity | Description |
-|--------------------|----------|-------------|
-| Performance score  | Low      | Lighthouse Performance varies slightly between hosts (100 on GitHub Pages, 99 on Vercel) due to different CDN configurations. All other categories score 100. |
+| Title                      | Severity | Description |
+|----------------------------|----------|-------------|
+| Genre card scale animation | Low      | Genre cards were too large to scale up effectively during carousel-triggered animations. Scaling up caused layout issues, so the animation was adjusted to scale down instead for a cleaner visual effect. |
+| Performance optimisation   | Low      | Full-page background images and carousel assets impacted performance. Images were compressed, but further optimisation could improve load times. |
 
 ---
 
 ## Future Work
 
-* Additional keyboard navigation and ARIA labels for better accessibility
-* Potential OOP refactor using JavaScript classes to improve code maintainability
-* Pagination or "show more" functionality for search results
+* Improve accessibility with keyboard navigation and ARIA labels  
+* Refactor components using JavaScript classes (OOP)  
+* Add pagination or “load more” functionality for search results  
 
 ---
 

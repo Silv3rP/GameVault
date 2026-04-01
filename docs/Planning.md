@@ -1,34 +1,40 @@
 # Project Concept
 
-I'm passionate about video games and wanted to create GameVault — a web project that explores the genres I love. By building this interactive guide covering Shooter, RPG, Horror, and Indie games, I can showcase my interest in gaming while demonstrating my web development skills. The goal is to create an engaging resource that helps other gamers discover and understand what makes each genre unique.
+I'm passionate about video games and wanted to create GameVault — a web project that explores the genres I enjoy most. By building this interactive guide covering Shooter, RPG, Horror, and Indie games, I can combine my interest in gaming with my web development skills.
+
+The aim of the project is to create an engaging and interactive resource that helps users explore different genres and understand what makes each one unique.
+
+---
 
 ## Project Structure
 
-This is how I will structure my one-page website:
+The website is designed as a single-page application, with each section clearly laid out for easy navigation:
 
-1. **Header (with navigation + dark mode toggle)**  
-	I will include the site name and a navigation menu for quick section links. I will place the dark mode toggle in the top right so users can switch between light and dark themes at any time.
+1. **Header (Navigation + Dark Mode Toggle)**  
+   The header includes the site title and a navigation menu for quick access to each section. A dark mode toggle is positioned in the top-right corner so users can switch themes at any time.
 
-2. **Carousel hero**  
-	I will create a carousel hero that displays only the genre name and a game image of my choosing from that genre as the background. I will include slider arrows and dot indicators to show which slide the user is on.
+2. **Carousel Hero**  
+   A carousel will be used as the main visual feature of the page. Each slide will display a genre name along with a background image from a selected game. Navigation arrows and dot indicators will allow users to move between slides.
 
-3. **Shooter section**  
-	I will feature popular shooter games as clickable image cards. Each card will include the game image (with hover effects), and the game information (title, release date, and external game info link) will be shown beside or under the image card.
+3. **Shooter Section**  
+   This section will feature popular shooter games displayed as clickable image cards. Each card will include the game image with hover effects, along with key information such as title, release date, and an external link.
 
-4. **RPG section**  
-	I will follow the same layout as the Shooter section, featuring RPG games.
+4. **RPG Section**  
+   This section follows the same layout as the Shooter section, ensuring consistency across the page while showcasing RPG games.
 
-5. **Horror section**  
-	I will follow the same layout as the Shooter section, featuring horror games.
+5. **Horror Section**  
+   This section uses the same structure to present horror games, maintaining a consistent design throughout the site.
 
-6. **Indie section**  
-	I will follow the same layout as the Shooter section, featuring indie games.
+6. **Indie Section**  
+   This section highlights indie games using the same card-based layout.
 
-7. **Newsletter form**  
-	I will add a newsletter form with name and email. I will use JavaScript regex-based form validation to show a success or error message after submission.
+7. **Newsletter Form**  
+   A newsletter form will allow users to enter their name and email. JavaScript will be used with regex validation to check inputs and display success or error messages.
 
 8. **Footer**  
-	I will include copyright text, a back-to-top link, and a credit to myself in the footer.
+   The footer will include copyright information, a back-to-top link for easier navigation, and a credit to the developer.
+
+---
 
 ## Wireframe
 
