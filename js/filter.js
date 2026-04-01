@@ -1,4 +1,4 @@
-(function () {
+( () => {
 
 
     // Get the genre filter dropdown id and all genre section classes

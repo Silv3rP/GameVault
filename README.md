@@ -58,15 +58,17 @@ I chose a dark-themed gaming aesthetic with an orange and blue colour scheme —
 
 I created wireframes at the start of the project to plan the layout and structure before building anything.
 
-![GameVault Wireframe](images/wireframe.png)
+![GameVault Wireframe](images/gamevault_wireframe.png)
 
 ---
 
 ## Testing
 
+A comprehensive set of tests was conducted, including Lighthouse for accessibility, performance, and SEO, all scoring 100 except for a slight dip in performance. Additional testing covered responsive design across devices, dark mode, form validation, CheapShark API, theme filter, carousel behavior, and back button. Initial Biome linting found five errors and 12 warnings, which were all resolved in the final pass, ensuring clean code.
+
 | Test | Result |
 |------|--------|
-| Lighthouse Performance | 64 |
+| Lighthouse Performance | 91 |
 | Lighthouse Accessibility | 100 |
 | Lighthouse Best Practices | 100 |
 | Lighthouse SEO | 100 |
@@ -80,8 +82,15 @@ I created wireframes at the start of the project to plan the layout and structur
 
 ### Biome Lint Output
 
-```bash
-PASTE YOUR BIOME OUTPUT HERE
+```
+COLOMBO@COLOMBO MINGW64 ~/OneDrive/Full-Stack-Software-Development/Assignment2-Javascript/GameVault (main)
+$ npx @biomejs/biome lint --max-diagnostics 100
+Checked 8 files in 35ms. No fixes applied.
+
+COLOMBO@COLOMBO MINGW64 ~/OneDrive/Full-Stack-Software-Development/Assignment2-Javascript/GameVault (main)
+$
+
+
 ```
 
 ---
@@ -90,7 +99,7 @@ PASTE YOUR BIOME OUTPUT HERE
 
 | Title | Severity | Description |
 |-------|----------|-------------|
-| Performance score | Low | My Lighthouse performance score dropped from 100 to 64 after adding full page background images and twelve carousel images. The images are compressed but further optimisation could improve this. |
+| Performance score | Low | My Lighthouse performance score dropped from 100 to 91 after adding full page background images and twelve carousel images. The images are compressed but further optimisation could improve this. |
 
 ---
 

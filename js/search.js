@@ -38,7 +38,7 @@
             }, 3000);
         
             // Get the selected radio button value
-            let store = document.querySelector('input[name="store"]:checked').value;
+            const store = document.querySelector('input[name="store"]:checked').value;
 
         // Fetch data from CheapShark API and parse results. Show title, sale price, normal price, steam rating data (if available), and thumbnail for each result. 
         try {

@@ -1,7 +1,7 @@
 //Dark Mode Toggle Script for switching between light and dark themes on the website.
 //It listens for a click event on the toggle button, toggles the 'dark-mode' class on the body element, and updates the icon accordingly.
-(function() {
-    //Pulls the classes for darkmode and applies them to the page
+( () => {
+    //Pull the classes for darkmode and applies them to the page
     const toggle = document.getElementById('theme-toggle');
     const icon = document.querySelector('.icon');
 

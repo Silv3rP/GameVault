@@ -1,4 +1,4 @@
-(function() {
+( () => {
     // get the form and input elements from the DOM
     const form = document.querySelector(".user-form");
     const fnameInput = document.getElementById("fname");

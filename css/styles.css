@@ -141,8 +141,6 @@ header {
 }
 
 #search-section input {
-    width: 100%;
-    height: 100%;
     margin: 0.5em 0;
     border-radius: 4px;
     font-size: 20px;
@@ -306,10 +304,6 @@ header {
     color: #fff;
 }
 
-.game-result p, .game-result h3 {
-    margin: 0.3em 0;
-}
-
 .game-result:hover {
     background-color: #d07410;
     transform: scale(1.05);
@@ -426,12 +420,12 @@ header {
     font-family: 'Orbitron', sans-serif;
 }
 
-.image-text p{
-    display: none;
-}
-
 p{
     font-size: 25px;
+}
+
+.image-text p{
+    display: none;
 }
 
 .image-text h3 {
@@ -715,7 +709,7 @@ span{
     font-style: oblique;
 }
 
-.user-form input{
+#newsletter .user-form input{
     width: 100%;
     max-width: 400px;
     padding: 0.5em;
@@ -726,11 +720,16 @@ span{
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.user-form input:hover {
+#newsletter .user-form input:hover {
     background-color: #fff;
 }
 
-.user-form button {
+#search-section input {
+    width: 100%;
+    height: 100%;
+}
+
+#newsletter .user-form button {
     width: 100%;
     max-width: 400px;
     font-size: 1em;
@@ -746,17 +745,17 @@ span{
 
 }
 
-.dark-mode .user-form button {
+#newsletter .dark-mode .user-form button {
     background-color: blue;
     color: #fff;
 }
 
-.user-form button:hover {
+#newsletter .user-form button:hover {
     background: #d07410;
     transform: scale(1.05);
 }
 
-.dark-mode .user-form button:hover {
+#newsletter .dark-mode .user-form button:hover {
     background: #0000d1;
     transform: scale(1.05);
 }
@@ -817,8 +816,12 @@ span{
     font-size: 15px;
 }
 
-footer p {
+.footer p {
     margin: 0.5em;
+}
+
+.game-result p, .game-result h3 {
+    margin: 0.3em 0;
 }
 
 .dark-mode .footer {
@@ -976,12 +979,17 @@ footer p {
         padding: 1em;
     }
 
-    .user-form input {
+    #newsletter .user-form input {
         width: 75%;
         padding: 0.5em;
     }
 
-    .user-form button {
+    #search-section input {
+    width: 100%;
+    height: 100%;
+    }
+
+    #newsletter .user-form button {
         width: 75%;
         padding: 0.5em;
     }
@@ -1021,9 +1029,14 @@ footer p {
         font-size: 20px;
     }
 
-    .user-form input,
-    .user-form button {
+    #newsletter .user-form input,
+    #newsletter .user-form button {
         max-width: 400px;
+    }
+
+    #search-section input {
+    width: 100%;
+    height: 100%;
     }
 
     .genre-content {
@@ -1143,9 +1156,14 @@ footer p {
         object-fit: cover;
     }
 
-    .user-form input,
-    .user-form button {
+    #newsletter .user-form input,
+    #newsletter .user-form button {
         width: 50%;
+    }
+
+    #search-section input {
+    width: 100%;
+    height: 100%;
     }
 
     .title h1 {

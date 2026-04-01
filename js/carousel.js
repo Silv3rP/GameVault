@@ -1,4 +1,4 @@
-(function() {
+( () => {
   window.addEventListener("load", () => {
 
     // Get carousel elements
@@ -20,7 +20,9 @@
       }
 
     // Remove active from all dots
-    dots.forEach(dot => dot.classList.remove("active"));
+    dots.forEach(dot => {
+      dot.classList.remove("active");
+    });
 
     // Set current slide as active
     slides[currentIndex].classList.add("active");
