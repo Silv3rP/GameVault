@@ -14,7 +14,7 @@ I decided early on to go with a **dark gaming-style theme**, using:
 
 - Orange as the main accent in light mode
 - Blue as the accent in dark mode
-- The **Orbitron font** to give it that futuristic / gaming feel
+- The **Orbitron font** to give it a futuristic / gaming style
 
 Originally, the genre cards just had solid colours, but I changed that later to **space background images** because it made everything feel more cohesive and visually interesting. I also added full page background images for both light and dark mode, each corresponding to their respective theme.
 
