@@ -96,7 +96,7 @@ A comprehensive set of tests was conducted, including Lighthouse audits for perf
 | GitHub Pages   | 100         | 100           | 100            | 100 |
 | Vercel         | 99          | 100           | 100            | 100 |
 
-Earlier performance issues (score of 91) were improved through image optimisation.
+Earlier performance issues were improved through image optimisation.
 
 ### Additional Testing
 
